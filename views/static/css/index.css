@@ -1,0 +1,107 @@
+body{
+    background-color: #f5f5f5;
+}
+header{
+    border-bottom: 2px solid rgb(140, 0, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 0.5rem 2rem;
+}
+
+.company{
+    /* border: 1px solid brown; */
+
+}
+.company img{
+    width: 150px;
+
+}
+
+nav>ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    gap: 1rem;
+    /* border: 1px solid brown; */
+}
+nav ul li, nav ul li a, .nav-item{
+    list-style-type: none;
+    text-decoration: none;
+    border: none;
+    color: #333;
+}
+
+.hero{
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+.hero-title, .hero-detail{
+    max-width: 560px;
+    margin: auto;
+    text-align: center;
+}
+.hero-title{
+    font-size: 3em;
+    font-weight: 700;
+}
+.hero-detail{
+    font-size: 1.5em;
+}
+
+.offers{
+    display: grid;
+    grid-template-columns: auto;
+    max-width: 980px;
+    margin: auto;
+    padding: 1rem 2rem;
+    gap: 3rem;
+}
+
+.offer{
+    display: flex;
+    gap: 2rem;
+    border: 1px solid #333;
+    border-radius: 10px;
+
+}
+.offer-image{
+    width: 30%;
+}
+
+.offer-text{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+.offer img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
+.offer:nth-child(even) .offer-image{
+    order: 2;
+}
+.offer:nth-child(even) .offer-image img{
+    border-radius: 0px 10px 10px 0px;
+    
+}
+
+.offer-text-title{
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.offer-text-details{
+    font-size: 1.2em;
+}
+
+
+
