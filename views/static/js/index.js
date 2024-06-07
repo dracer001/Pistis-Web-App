@@ -112,6 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         startY = null; // Reset startY to avoid multiple triggers
     });
+        // Add click event listener to the container
+        container.addEventListener('click', () => {
+            nextItem();
+        });
 
     showItem(currentIndex);
 });
