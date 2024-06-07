@@ -12,12 +12,19 @@
 <body>
     <header>
         <div class="company"><img src="../media/icons/logo.png" alt=""></div>
+        <div class="menu-bar">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li class="dropdown">
-                    <button class="nav-item dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#">About Us</a></li>
+                <li class="dropdown nav-item">
+                    <button class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         Products
                     </button>
                     <ul class="dropdown-menu">
@@ -26,44 +33,127 @@
                       <li><a class="dropdown-item">Energy Solutions</a></li>
                     </ul>
                 </li>
-                <li class=""><a class="btn-primary btn" href="#">Get Started</a></li>
+                <li class="nav-item btn"><a class="btn-primary btn" href="#">Get Started</a></li>
             </ul>
         </nav>
     </header>
     <div class="hero">
         <p class="hero-title">Pistis Engineering Solutions</p>
-        <p class="hero-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit fugiat dolore ab voluptatum iste odio, inventore odit ducimus quaerat sunt quasi dolores voluptas magni voluptatem? Adipisci, commodi officiis. Ipsa, dolor?</p>
-        <button type="button" class="btn btn-primary btn-lg">Get Started</button>
+        <p class="hero-detail">Discover the power of innovation and expertise.<br> We specialize in IT solutions, training programs, and sustainable energy solutions to drive your success forward.</p>
+        <button type="button" class="btn btn-primary">Get Started</button>
+        <button type="button" class="btn btn-outline-primary">Contact Us</button>
     </div>
     <main>
-        <div class="offers">
-            <div class="offer">
-                <div class="offer-image"><img src="../media/images/it-sol.jpeg" alt=""></div>
-                <div class="offer-text">
-                    <p class="offer-text-title">IT Solutions</p>
-                    <p class="offer-text-details">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, quam repudiandae doloremque ab unde fugiat illo, similique molestias nam ducimus error commodi facilis at ut fuga odit veniam rem. Aperiam!</p>
-                    <button type="button" class="btn btn-outline-primary">Discover more...</button>
-                
+        <section class="about-us" id="about-us">
+            <div class="company-info">
+                <h3 class="company-info-title">Who We Are</h3>
+                <p class="company-info-details">
+                    At Pistis Engineering Solutions, we are dedicated professionals delivering innovative IT solutions, comprehensive training, and sustainable energy services. Our mission is to empower businesses and drive success with tailored, high-quality solutions. Guided by our core values of integrity and excellence, we build lasting partnerships and make a positive impact in the digital landscape.
+                </p>     
+            </div>
+
+            <div class="company-img-rep">
+                <h3>What we Stand For</h3>
+                <div class="graphic-rep">
+                    <div class="graphic-rep-item center">Innovation</div>
+                    <div class="graphic-rep-item top-right">Excellence</div>
+                    <div class="graphic-rep-item top-left">Integrity</div>
+                    <div class="graphic-rep-item bottom-right">Commitment</div>
+                    <div class="graphic-rep-item bottom-left">Collaboration</div>
                 </div>
             </div>
-            <div class="offer">
-                <div class="offer-image"><img src="../media/images/train-sol.jpeg" alt=""></div>
-                <div class="offer-text">
-                    <p class="offer-text-title">Training Solutions</p>
-                    <p class="offer-text-details">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet necessitatibus nulla perferendis quia harum explicabo repudiandae quos, quae modi veniam magni nobis maiores praesentium molestias eligendi pariatur suscipit. Tempore, repudiandae!</p>
-                    <button type="button" class="btn btn-outline-primary">Discover more...</button>
+        </section>
+        <section>
+            <h3>Our Services</h3>
+            <div class="offers">
+                <div class="offer">
+                    <div class="offer-image"><img src="../media/images/it-sol.jpeg" alt=""></div>
+                    <div class="offer-text">
+                        <p class="offer-text-title">IT Solutions</p>
+                        <p class="offer-text-details">Our IT Solutions streamline operations, enhance cybersecurity, and support cloud integration. We provide tailored services, including network management and software development, to ensure your IT infrastructure is secure and efficient, allowing you to focus on your business goals.</p>
+                        <button type="button" class="btn btn-outline-primary">Discover more...</button>          
+                    </div>
+                </div>
+                <div class="offer">
+                    <div class="offer-image"><img src="../media/images/train-sol.jpeg" alt=""></div>
+                    <div class="offer-text">
+                        <p class="offer-text-title">Training Solutions</p>
+                        <p class="offer-text-details">Empower your team with tailored training programs designed to enhance skills and boost productivity. From workshops to e-learning courses, we provide comprehensive solutions that keep your workforce ahead in a competitive market.</p>
+                        <button type="button" class="btn btn-outline-primary">Discover more...</button>
+                    </div>
+                </div>
+                <div class="offer">
+                    <div class="offer-image"><img src="../media/images/energy-sol.jpg" alt=""></div>
+                    <div class="offer-text">
+                        <p class="offer-text-title">Energy Solutions</p>
+                        <p class="offer-text-details">Optimize energy use and reduce costs with our sustainable energy solutions. We offer expert consulting, innovative technologies, and efficient energy management systems to help you achieve your sustainability goals and improve operational efficiency.</p>
+                        <button type="button" class="btn btn-outline-primary">Discover more...</button>
+                        
+                    </div>
                 </div>
             </div>
-            <div class="offer">
-                <div class="offer-image"><img src="../media/images/energy-sol.jpg" alt=""></div>
-                <div class="offer-text">
-                    <p class="offer-text-title">Energy Solutions</p>
-                    <p class="offer-text-details">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo beatae perferendis quibusdam necessitatibus eum culpa. Voluptates perspiciatis corrupti quasi sint. Ab explicabo id nobis tempora voluptates dolor incidunt culpa voluptatem.</p>
-                    <button type="button" class="btn btn-outline-primary">Discover more...</button>
-                    
+        </section>
+        <section id="choose-us" class="choose-us carousel slide" data-bs-ride="carousel">
+            <h3>Why Choose Us?</h3>
+            <div class="features carousel-inner">
+                <div class="feature carousel-item active">
+                    <img src="../media/images/R.jpeg" alt="Experienced Professionals">
+                    <div class="feature-text">
+                        <p class="feature-title">Experienced Professionals</p>
+                        <p class="feature-details">Our team consists of industry experts with years of experience.</p>
+                    </div>
+                </div>
+                <div class="feature carousel-item">
+                    <img src="../media/images/R (1).jpeg" alt="Customized Solutions">
+                    <div class="feature-text">
+                        <p class="feature-title">Customized Solutions</p>
+                        <p class="feature-details">We provide solutions tailored to meet your specific business needs.</p>
+                    </div>
+                </div>
+                <div class="feature carousel-item">
+                    <img src="../media/images/R (3).jpeg" alt="Proven Track Record">
+                    <div class="feature-text">
+                        <p class="feature-title">Proven Track Record</p>
+                        <p class="feature-details">We have a history of delivering successful projects across industries.</p>
+                    </div>
+                </div>
+                <div class="feature carousel-item">
+                    <img src="../media/images/customer-service-concept-support-assistance-call-center-vector.jpg" alt="Customer Support">
+                    <div class="feature-text">
+                        <p class="feature-title">Customer Support</p>
+                        <p class="feature-details">Our support team is available 24/7 to assist you with any issues.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+    
+        <section class="testimonials" id="testimonials">
+            <h3>Testimonials</h3>
+            <div class="testimonial-container">
+                <div class="testimonial-item">
+                    <img src="../media/images/testimonial1.png" alt="">
+                    <div class="testimonial-text">
+                        <p>"The IT solutions provided by this company have transformed our business operations. Highly recommend!"</p>
+                        <p class="author">- John Doe, CEO of Company A</p>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <img src="../media/images/testimonial2.png" alt="">
+                    <div class="testimonial-text">
+                        <p>"Their training solutions helped our team gain new skills and improve productivity."</p>
+                        <p class="author">- Jane Smith, HR Manager of Company B</p>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <img src="../media/images/testimonial3.png" alt="">
+                    <div class="testimonial-text">
+                        <p>"The energy solutions implemented have significantly reduced our operational costs."</p>
+                        <p class="author">- Mark Johnson, Operations Manager of Company C</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
     </main>
     <footer>
         <div class="footer-info">
@@ -71,7 +161,7 @@
                 <p>Subscribe to our newsletter</p>
                 <div class="input-group mb-3">
                     <input type="email" class="form-control" placeholder="eamil.example.com" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Subscribe</button>
                   </div>
             </div>
             <div>
@@ -129,5 +219,6 @@
             <p>&copy; 2024 EARTLINK. All rights reserved.</p>
         </div>
     </footer>
+    <script src="../static/js/index.js"></script>
 </body>
 </html>
