@@ -1,6 +1,79 @@
+console.log('JavaScript is loaded!'); //SHOW JS IS LOADED
+
+// TOGGLE DISPLAYS FOR LARGE AND SMALL DEVICE
+const carouselItem = document.querySelectorAll('.carousel-item'); //WHY-CHOOSE-US
+
+//Testimonials
+const testimonialContainer = document.querySelector('.testimonial-container');
+const testimonialItems = document.querySelectorAll('.testimonial-item');
+let testimonialLength = testimonialItems.length;
+
+
+function checkWidth() {
+    if (window.innerWidth >= 960) {
+        carouselItem.forEach((item)=>{
+            item.classList.remove('carousel-item');
+            console.log(item, 'remove');
+        });
+        testimonialContainer.classList.replace('testimonial-container', 'testimonial-slider');
+        testimonialItems.forEach(item =>{item.classList.replace('testimonial-item','testimonial-slide')})
+        showSlide_lg(currentSlide);
+        setInterval(nextSlide, 5000);
+    } else {
+        carouselItem.forEach((item)=>{
+            item.classList.add('carousel-item');
+            console.log(item, 'add')
+        })
+        testimonialContainer.classList.replace('testimonial-slider', 'testimonial-container');
+        testimonialItems.forEach(item =>{item.classList.replace('testimonial-slide','testimonial-item')});
+
+        
+        testimonialContainer.addEventListener('wheel', (event) => {
+            if (event.deltaY > 0) {
+                nextItem();
+            } else {
+                prevItem();
+            }
+        });
+
+        testimonialContainer.addEventListener('touchstart', (event) => {
+            startY = event.touches[0].clientY;
+        });
+
+        testimonialContainer.addEventListener('touchmove', (event) => {
+            if (!startY) return;
+            
+            let currentY = event.touches[0].clientY;
+            let diffY = startY - currentY;
+
+            if (diffY > 0) {
+                nextItem();
+            } else {
+                prevItem();
+            }
+
+            startY = null; // Reset startY to avoid multiple triggers
+        });
+        // Add click event listener to the container
+        testimonialContainer.addEventListener('click', () => {
+            nextItem();
+        });
+
+        showItem_sm(currentIndex);
+    }
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('JavaScript is loaded!');
-});
+
+    checkWidth();
+})
+// Add event listener for window resize
+window.addEventListener('resize', checkWidth);
+
+
+
+// function to toggle nav bar for small and medium device
 function toggleMenu() {
     const menuIcon = document.querySelector('.menu-icon');
     menuIcon.classList.toggle('open');
@@ -9,193 +82,57 @@ function toggleMenu() {
     offCanvasMenu.classList.toggle('open');
 }
 
-let currentSlide = 0;
-const slides = document.querySelectorAll('.testimonial-slide');
 
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
+
+// TESTIMONIAL DISPLAY FOR Medium and Small Device
+
+var currentIndex = 0;
+var startY;
+function showItem_sm(index) {
+    testimonialItems.forEach((item, i) => {
+        if (i === index) {
+            item.style.transform = 'translateY(0)';
+            item.classList.remove('hidden');
+        } else if (i < index) {
+            item.style.transform = 'translateY(-100%)';
+            item.classList.add('hidden');
+        } else {
+            item.style.transform = 'translateY(100%)';
+            item.classList.add('hidden');
+        }
     });
 }
 
+function nextItem() {
+    currentIndex = (currentIndex + 1) % testimonialLength;
+    showItem_sm(currentIndex);
+}
+
+function prevItem() {
+    currentIndex = (currentIndex - 1 + testimonialLength) % testimonialLength;
+    showItem_sm(currentIndex);
+}
+
+
+// TESTIMONIAL DISPLAY FOR Large and greater than device width
+
+let currentSlide = 0;
+
+function showSlide_lg(index) {
+    testimonialItems.forEach((slide, i) =>{slide.classList.toggle('active', i === index)})
+}
+
+
 function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
+    for (let i=0; i < testimonialItems.length; i++) {
+        if (testimonialItems[i].matches(':hover')) return false;
+    }
+    currentSlide = (currentSlide + 1) % testimonialLength;
+    showSlide_lg(currentSlide);
 }
 
 // Show the first slide initially
-showSlide(currentSlide);
+showSlide_lg(currentSlide);
 
 // Change slide every 5 seconds
 setInterval(nextSlide, 5000);
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-        });
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
-    }
-
-    // Show the first slide initially
-    showSlide(currentSlide);
-
-    // Change slide every 5 seconds
-    setInterval(nextSlide, 5000);
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const container = document.querySelector('.testimonial-container');
-    const items = document.querySelectorAll('.testimonial-item');
-    let currentIndex = 0;
-    let startY;
-
-    function showItem(index) {
-        items.forEach((item, i) => {
-            if (i === index) {
-                item.style.transform = 'translateY(0)';
-                item.classList.remove('hidden');
-            } else if (i < index) {
-                item.style.transform = 'translateY(-100%)';
-                item.classList.add('hidden');
-            } else {
-                item.style.transform = 'translateY(100%)';
-                item.classList.add('hidden');
-            }
-        });
-    }
-
-    function nextItem() {
-        currentIndex = (currentIndex + 1) % items.length;
-        showItem(currentIndex);
-    }
-
-    function prevItem() {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        showItem(currentIndex);
-    }
-
-    container.addEventListener('wheel', (event) => {
-        if (event.deltaY > 0) {
-            nextItem();
-        } else {
-            prevItem();
-        }
-    });
-
-    container.addEventListener('touchstart', (event) => {
-        startY = event.touches[0].clientY;
-    });
-
-    container.addEventListener('touchmove', (event) => {
-        if (!startY) return;
-        
-        let currentY = event.touches[0].clientY;
-        let diffY = startY - currentY;
-
-        if (diffY > 0) {
-            nextItem();
-        } else {
-            prevItem();
-        }
-
-        startY = null; // Reset startY to avoid multiple triggers
-    });
-        // Add click event listener to the container
-        container.addEventListener('click', () => {
-            nextItem();
-        });
-
-    showItem(currentIndex);
-});
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     const container = document.querySelector('.testimonial-container');
-//     const items = document.querySelectorAll('.testimonial-item');
-//     let currentIndex = 0;
-
-//     function showItem(index) {
-//         items.forEach((item, i) => {
-//             if (i === index) {
-//                 item.style.transform = 'translateY(0)';
-//                 item.classList.remove('hidden');
-//             } else if (i < index) {
-//                 item.style.transform = 'translateY(-100%)';
-//                 item.classList.add('hidden');
-//             } else {
-//                 item.style.transform = 'translateY(100%)';
-//                 item.classList.add('hidden');
-//             }
-//         });
-//     }
-
-//     function nextItem() {
-//         currentIndex = (currentIndex + 1) % items.length;
-//         showItem(currentIndex);
-//     }
-
-//     function prevItem() {
-//         currentIndex = (currentIndex - 1 + items.length) % items.length;
-//         showItem(currentIndex);
-//     }
-
-//     container.addEventListener('wheel', (event) => {
-//         if (event.deltaY > 0) {
-//             nextItem();
-//         } else {
-//             prevItem();
-//         }
-//     });
-
-//     showItem(currentIndex);
-// });
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     const container = document.querySelector('.testimonial-container');
-//     const items = document.querySelectorAll('.testimonial-item');
-//     let currentIndex = 0;
-
-//     function showItem(index) {
-//         items.forEach((item, i) => {
-//             if (i === index) {
-//                 item.style.transform = 'translateY(0%)';
-//                 item.classList.remove('hidden');
-//             } else {
-//                 item.style.transform = 'translateY(100%)';
-//                 item.classList.add('hidden');
-//             }
-//         });
-//     }
-
-//     function nextItem() {
-//         currentIndex = (currentIndex + 1) % items.length;
-//         showItem(currentIndex);
-//     }
-
-//     function prevItem() {
-//         currentIndex = (currentIndex - 1 + items.length) % items.length;
-//         showItem(currentIndex);
-//     }
-
-//     container.addEventListener('wheel', (event) => {
-//         if (event.deltaY > 0) {
-//             nextItem();
-//         } else {
-//             prevItem();
-//         }
-//     });
-
-//     showItem(currentIndex);
-// });
