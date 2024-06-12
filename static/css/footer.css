@@ -1,0 +1,137 @@
+
+/* FOOTER */
+footer {
+    background-color: #0e001a;
+    color: #e5e5e5;
+    padding: 2rem;
+    padding-bottom: 1rem;
+}
+
+footer a{
+    color: #fff;
+}
+
+footer p{
+    text-align: center;
+}
+.footer-info {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+footer .caption{
+    text-align: center;
+}
+.all-products{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    gap: 0.4rem;
+    /* text-align: left; */
+}
+.all-products p{
+    text-align: center;
+    font-size: 0.9em;
+}
+.all-products li{
+    font-size: 0.7em;
+    font-weight: 300;
+}
+
+.contact-info p{
+    margin: 0.6rem;
+}
+.telephone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 0.5rem;
+}
+.telephone i{
+ font-size: 0.8em;
+ text-align: center;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.social-icons i {
+    /* font-size: 24px; */
+    transition: color 0.3s;
+}
+
+.social-icons i:hover {
+    color: #0056b3; /* Optional: Change color on hover */
+}
+
+.bi-facebook {
+    color: #1877F2; /* Facebook official color */
+}
+
+.bi-twitter-x {
+    color: #333; /* Twitter (X) official color */
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bi-instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* color: purple; */
+}
+
+.copy-write{
+    font-style: italic;
+    font-size: 0.8em;
+    margin-top: 2rem;
+}
+
+
+@media (min-width: 560px){
+    .all-products{
+        gap: 0.7rem;
+    }
+
+}
+
+@media (min-width: 768px){
+    .all-products{
+        gap: 1.2rem;
+    }
+}
+
+@media (min-width: 960px){
+    .footer-info {
+        grid-template-columns: auto auto;
+        column-gap: 5rem;
+    }
+    .products{
+        order: -1;
+        grid-column: span 2;
+    }
+
+    .all-products{
+        gap: 0.7rem;
+    }
+}
+
+
+@media (min-width: 1200px){
+    .footer-info {
+        grid-template-columns: auto auto auto;
+    }
+    .products{
+        order: 0;
+        grid-column: span 1;
+    }
+}

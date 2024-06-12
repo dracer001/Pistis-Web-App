@@ -11,7 +11,8 @@ const connectDB = require('./models/modelConfig')
 
 const bodyParser = require('body-parser')
 const publicRoute = require('./routes/public')
-const trainingSolutionRoute = require('./routes/trainingSolution') 
+const trainingSolutionRoute = require('./routes/trainingSolution')
+const adminRoute = require('./routes/admin');
 const databaseWare = require('./middleware/database');
 const PORT = process.env.PORT || 5500;
 
@@ -23,9 +24,10 @@ app.set('view engine', 'ejs');
 app.set('view options', {delimiter: '?'});
 
 app.use('/', publicRoute)
-app.use(databaseWare)
-app.use('/training-solutions', trainingSolutionRoute)
 
+// app.use(databaseWare)
+app.use('/training-solutions', trainingSolutionRoute)
+app.use('/admin-panel-xyz')
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
