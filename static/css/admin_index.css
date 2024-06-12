@@ -1,0 +1,37 @@
+body{
+    font-size: 1.5rem;
+}
+.hero{
+    min-height: 50vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #555 url('../media/images/admin-background.jpg') no-repeat;
+    background-size: cover;
+}
+.hero p{
+    max-width: 500px;
+    margin: auto;
+    color: white;
+}
+
+.card-img-top{
+    width: 150px;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    color: var(--primary-color);
+}
+.card:hover{
+    transform: scale(1.1);
+}
+a {
+    text-decoration: none;
+}

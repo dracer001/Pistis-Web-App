@@ -4,5 +4,4 @@ const PUBLIC = require('../controller/public')
 
 router.get('/', PUBLIC.index)
 
-router.get('/training-solutions', )
 module.exports = router;

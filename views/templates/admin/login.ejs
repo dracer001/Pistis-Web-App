@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel Login</title>
-    <link rel="stylesheet" href="css/admin-index.css">
+    <link rel="stylesheet" href="../css/admin_login.css">
 </head>
 <body>
     <div class="container">
         <div class="login-box">
             <h2>Admin Panel Login</h2>
-            <form id="loginForm">
+            <!-- Conditionally render the error message -->
+            <? if (error_msg) { ?>
+                <div class="error-message"><?= error_msg ?></div>
+            <? } ?>
+            <form action="login" method="POST">
                 <div class="input-box">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" required>
@@ -23,6 +27,5 @@
             </form>
         </div>
     </div>
-    <script src="scripts.js"></script>
 </body>
 </html>
