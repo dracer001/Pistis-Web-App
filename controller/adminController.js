@@ -20,8 +20,20 @@ const adminIndex = async(req, res) =>{
     res.render('templates/admin/index')
 }
 
+const displayUpload = async(req, res) =>{
+    res.render('templates/admin/upload_course')
+}
+
+const uploadCourse = async(req, res) =>{
+    const formData = req.body
+    console.log('GOTTEN DATA')
+    console.log(formData)
+
+}
 module.exports = {
     displayLogin,
     authLogin,
-    adminIndex
+    adminIndex,
+    displayUpload,
+    uploadCourse
 }

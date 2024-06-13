@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <?- include('../base/dependencies') ?>
+        <link rel="stylesheet" href="../css/admin_index.css">
+        <link rel="stylesheet" href="../css/admin_upload.css">
+        <title>Admin Panel</title>
+    </head>
+<body>
+    <?- include('header') ?>
+    <main class="container">
+        <h2>Upload Courses to datatabase</h2>
+        <form action="upload-course" method="post" id="form" enctype="multipart/form-data">
+            <div class="row gy-3 course-form border my-3">
+                <div class="col-6 form-floating">
+                    <input type="text" class="form-control" id="course-name" placeholder="" name="course-name">
+                    <label for="course-name">Course Name</label>
+                </div>
+                <div class="col-6 form-floating">
+                    <input type="text" class="form-control" id="course-description" placeholder="" name="course-description">
+                    <label for="course-description">Course Description</label>
+                </div>
+                <div class="col-6 form-floating">
+                    <input type="text" class="form-control" id="course-duration" placeholder="" name="course-duration">
+                    <label for="floatingInput">Course Duration</label>
+                </div>
+                <div class="col-6 form-floating">
+                    <input type="number" class="form-control" id="course-price" placeholder="" name="course-price">
+                    <label for="course-price">Course Price (N)</label>
+                </div>
+                <div class="col-6 form-floating">
+                    <!-- <p>Please seperate each tag name with a <b>','</b></p> -->
+                    <input type="text" class="form-control" id="course-tags" placeholder="" name="course-tags">
+                    <label for="course-tags">Tag Names</label>
+                </div>
+                <div class="col-6 form-floating">
+                    <input type="file" accept="images/*" class="form-control" id="course-image" placeholder="" name="course-image">
+                    <label for="course-image">Cover Image</label>
+                </div>
+                <div class="col-12 form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Comments</label>
+                </div>
+                <div>
+                    <button class="btn add" onclick="addForm(this); return false;">Add</button>
+                    <button class="btn" onclick="removeFormBox(this); return false;">Remove</button>
+                </div>
+            </div>
+            <div class="submit">
+                <button type="submit" class="btn-lg btn-primary">UPLOAD</button>
+            </div>
+        </form>
+
+    </main>
+
+
+    <script>
+        function addForm(button) {
+            document.getElementsByClassName('nav-link')[0].classList.add('active')
+            const formBox = document.getElementsByClassName('course-form')[0].cloneNode(true)
+            inputs = formBox.querySelectorAll('input, textarea')
+            inputs.forEach(element => {
+                element.value = ''
+            });
+            formParent = document.querySelector('#form')
+            console.log(formParent)
+            formCurrent = button.parentElement.parentElement;
+            formCurrent.insertAdjacentElement('afterend', formBox.cloneNode(true));
+            // formParent.appendChild(formBox.cloneNode(true))
+        }
+
+        // addBtn = document.querySelector('add')
+        function removeFormBox(button) {
+            const formBox = button.parentElement.parentElement;
+            formBox.remove();
+        }
+
+    </script>
+</body>
+</html>

@@ -8,4 +8,8 @@ router.route('/login')
 
 router.get('/dashboard', adminController.adminIndex)
 
+router.route('/upload-course')
+    .get(adminController.displayUpload)
+    .post(adminController.uploadCourse)
+
 module.exports = router;
