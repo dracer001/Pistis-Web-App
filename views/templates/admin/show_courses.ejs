@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Courses</title>
+    <style>
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .course-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: calc(33.33% - 20px); /* Three items per row */
+            box-sizing: border-box;
+        }
+        .course-item h2 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .course-item p {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 60px; /* Adjust based on your needs */
+        }
+        .course-item .buttons {
+            margin-top: 10px;
+        }
+        .course-item button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Courses</h1>
+    <? if (courses.length > 0) { ?>
+        <div class="course-list">
+            <? courses.forEach(function(course) { ?>
+                <div class="course-item">
+                    <h2><?= course.course_title ?></h2>
+                    <p><?= course.course_description ?></p>
+                    <div class="buttons">
+                        <button onclick="window.location.href='course/view/<?= course._id ?>'">View</button>
+                        <button onclick="window.location.href='course/edit/<?= course._id ?>'">Edit</button>
+                    </div>
+                </div>
+            <? }); ?>
+        </div>
+    <? } else { ?>
+        <p>No courses available.</p>
+    <? } ?>
+</body>
+</html>

@@ -12,14 +12,15 @@
     <main class="container">
         <h2>Upload Courses to datatabase</h2>
         <form action="upload-course" method="post" id="form" enctype="multipart/form-data">
+            <input type="hidden" name="course_cnt" id="course_cnt" value="1">
             <div class="row gy-3 course-form border my-3">
                 <div class="col-6 form-floating">
                     <input type="text" class="form-control" id="course-name" placeholder="" name="course-name">
                     <label for="course-name">Course Name</label>
                 </div>
                 <div class="col-6 form-floating">
-                    <input type="text" class="form-control" id="course-description" placeholder="" name="course-description">
-                    <label for="course-description">Course Description</label>
+                    <input type="text" class="form-control" id="course-summary" placeholder="" name="course-summary">
+                    <label for="course-summary">Course Description</label>
                 </div>
                 <div class="col-6 form-floating">
                     <input type="text" class="form-control" id="course-duration" placeholder="" name="course-duration">
@@ -34,17 +35,21 @@
                     <input type="text" class="form-control" id="course-tags" placeholder="" name="course-tags">
                     <label for="course-tags">Tag Names</label>
                 </div>
-                <div class="col-6 form-floating">
-                    <input type="file" accept="images/*" class="form-control" id="course-image" placeholder="" name="course-image">
-                    <label for="course-image">Cover Image</label>
+                <div class="col-12 form-floating">
+                    <input type="text" name="course-synopsis" class="form-control" placeholder="Course Synopsis" id="course-synopsis" style="height: 100px" >
+                    <label for="course-synopsis">Course Synopsis</label>
                 </div>
                 <div class="col-12 form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                    <label for="floatingTextarea2">Comments</label>
+                    <input type="text" name="course-description" class="form-control" placeholder="Leave a comment here" id="course-description" style="height: 100px" >
+                    <label for="course-description">Comments</label>
+                </div>
+                <div class="col-6 form-floating">
+                    <input type="file" accept="image/jpeg, image/png" class="form-control" id="course-image" placeholder="" name="course-image">
+                    <label for="course-image">Cover Image</label>
                 </div>
                 <div>
-                    <button class="btn add" onclick="addForm(this); return false;">Add</button>
-                    <button class="btn" onclick="removeFormBox(this); return false;">Remove</button>
+                    <div class="btn add" onclick="addForm(this); return;">Add</div>
+                    <div class="btn" onclick="removeFormBox(this); return;">Remove</div>
                 </div>
             </div>
             <div class="submit">
@@ -56,17 +61,22 @@
 
 
     <script>
+        const courseCount = document.getElementById('course_cnt');
+        let courseCountN = Number(courseCount.value);
         function addForm(button) {
             document.getElementsByClassName('nav-link')[0].classList.add('active')
             const formBox = document.getElementsByClassName('course-form')[0].cloneNode(true)
             inputs = formBox.querySelectorAll('input, textarea')
             inputs.forEach(element => {
                 element.value = ''
+                // element.name = element.name+i
             });
             formParent = document.querySelector('#form')
             console.log(formParent)
             formCurrent = button.parentElement.parentElement;
             formCurrent.insertAdjacentElement('afterend', formBox.cloneNode(true));
+            courseCountN++;
+            console.log(courseCount.value = courseCountN)
             // formParent.appendChild(formBox.cloneNode(true))
         }
 
@@ -74,6 +84,8 @@
         function removeFormBox(button) {
             const formBox = button.parentElement.parentElement;
             formBox.remove();
+            courseCountN--;
+            console.log(courseCount.value = courseCount)
         }
 
     </script>

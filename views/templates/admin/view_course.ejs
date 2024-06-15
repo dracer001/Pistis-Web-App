@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Course</title>
+</head>
+<body>
+    <h1><?= course.course_title ?></h1>
+    <p><strong>Summary:</strong> <?= course.course_summary ?></p>
+    <p><strong>Description:</strong> <?= course.course_description ?></p>
+    <p><strong>Synopsis:</strong> <?= course.course_synopsis.join(', ') ?></p>
+    <p><strong>Duration:</strong> <?= course.course_duration ?></p>
+    <p><strong>Price:</strong> $<?= course.course_price ?></p>
+    <p><strong>Tags:</strong> <?= course.course_tags.join(', ') ?></p>
+    <img src="/uploads/<?= course.course_image ?>" alt="<?= course.course_title ?>" width="200">
+    <button onclick="window.location.href='/courses/all'">Back to All Courses</button>
+</body>
+</html>

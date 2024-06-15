@@ -136,3 +136,49 @@ showSlide_lg(currentSlide);
 
 // Change slide every 5 seconds
 setInterval(nextSlide, 5000);
+
+
+
+
+// function submitNewsLetter (){    
+//     console.log('active')
+//     const email = document.getElementById('newsletterEmail').value;
+//     // Prepare form data
+//     const formData = new FormData();
+//     formData.append("email", email);
+//     console.log(typeof email)
+//     console.log(typeof formData)
+//     // Send POST request to Express.js route
+//     fetch('/training-solutions/add-email', {
+//         method: 'POST',
+//         body: formData
+//     })
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok');
+//         }
+//         console.log(response.json());
+//         return response.json;
+//     })
+//     .then(data => {
+//         // Handle the response data
+//         console.log(data)
+//         // document.getElementById('response').innerHTML = `<p>Response from server: ${data.message}</p>`;
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+// }
+
+function submitNewsLetter() {
+    const email = document.getElementById('newsletterEmail').value;
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+      console.log(this.responseText);
+      }
+    xhttp.open("POST", "/training-solutions/add-email");
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("email="+email);
+  }
+  

@@ -11,10 +11,6 @@ const studentSchema = new Schema({
         required: true,
         unique: true
     },
-    course_description: {
-        type: String,
-        required: true,
-    },
     course_id: {
         type: mongoose.Schema.Types.ObjectId, // Use ObjectId to reference user
         ref: 'Course', // Assuming you have a User model

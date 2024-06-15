@@ -5,6 +5,7 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const flash = require('connect-flash');
 
+
 // EXPRESS
 const express = require('express')
 const app = express();
@@ -35,14 +36,29 @@ app.use(flash());
 // Middleware to parse form data
 // CONFIG
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 app.use(express.static(path.join(__dirname, 'static')));
 app.set('view engine', 'ejs');
 app.set('view options', {delimiter: '?'});
 
+app.post('/submit-form', (req, res) => {
+    // Process the form data
+    const email = req.body.email;
+    console.log(req.url)
+    console.log(req.body)
+    // Example response
+    const response = {
+        message: `Form data received:Email = ${email}`
+    };
+    console.log(response)
+    // Respond with JSON
+    return res.json(response);
+});
 
 app.use('/', publicRoute)
 
-// app.use(databaseWare)
+app.use(databaseWare)
 app.use('/training-solutions', trainingSolutionRoute)
 
 app.use((req, res, next) => {

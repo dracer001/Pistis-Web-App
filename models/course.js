@@ -29,6 +29,11 @@ const courseSchema = new Schema({
     course_tags: {
         type: [String],
     },
+    course_image: {
+        type: String,
+        required: true,
+        unique: true
+    },
 });
 
 module.exports = mongoose.model('Course', courseSchema);
