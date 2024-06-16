@@ -14,16 +14,16 @@
     <div class="head-nav">
         <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Benefits</a>
+              <a class="nav-link" href="#benefits">Benefits</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Courses</a>
+              <a class="nav-link" href="#courses">Courses</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Testimonies</a>
+              <a class="nav-link" href="#testimonies">Testimonies</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Faqs</a>
+              <a class="nav-link" href="#faqs">Faqs</a>
             </li>
           </ul>
     </div>
@@ -83,7 +83,7 @@
                 </div>
             </div>
         </section>
-        <section class="courses">
+        <section class="courses" id="courses">
             <h3>Explore Our Courses</h3>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <div class="col">
@@ -158,9 +158,9 @@
                 </div>
               </div>
         </section>
-        <section class="testimonials" id="testimonials" class="carousel slide" data-bs-ride="carousel">
+        <section class="testimonials rounded" id="testimonies" class="carousel slide" data-bs-ride="carousel">
             <h3>Testimonials</h3>
-            <div class="testimonial-container carousel-inner">
+            <div class="testimonial-list carousel-inner">
                 <div class="testimonial-item carousel-item active">
                     <img src="media/images/testimonial1.png" alt="">
                     <div class="testimonial-text">
@@ -185,93 +185,100 @@
             </div>
         </section>
     
-        <section class="Faqs" id="faqs">
-            <h3>Faqs</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Accordion Item #1
-                            </button>
-                          </h2>
-                          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                            </div>
-                          </div>
+        <section class="container faqs" id="faqs">
+            <h3>FAQs</h3>
+            <div class="accordion accordion-flush faq-container" id="faq-container">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq-header-1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-body-1" aria-expanded="false" aria-controls="faq-body-1">
+                            How can I register for a course?
+                        </button>
+                    </h2>
+                    <div id="faq-body-1" class="accordion-collapse collapse" aria-labelledby="faq-header-1" data-bs-parent="#faq-container">
+                        <div class="accordion-body">
+                            <b>To register for a course at Eartlink Training Institute, follow these steps:</b>
+                            <ol>
+                                <li>Visit our website and navigate to the "Courses" section.</li>
+                                <li>Select the course you are interested in.</li>
+                                <li>Click on the "Register" button.</li>
+                                <li>Fill out the registration form with your details.</li>
+                                <li>Complete the payment process to confirm your enrollment.</li>
+                            </ol>
                         </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              Accordion Item #2
-                            </button>
-                          </h2>
-                          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                              Accordion Item #3
-                            </button>
-                          </h2>
-                          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Accordion Item #1
-                            </button>
-                          </h2>
-                          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                            </div>
-                          </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq-header-2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-body-2" aria-expanded="false" aria-controls="faq-body-2">
+                            What are the prerequisites for enrolling in a course?
+                        </button>
+                    </h2>
+                    <div id="faq-body-2" class="accordion-collapse collapse" aria-labelledby="faq-header-2" data-bs-parent="#faq-container">
+                        <div class="accordion-body">
+                            <b>The prerequisites for enrolling in a course at Eartlink Training Institute vary depending on the course. Generally:</b>
+                            <ul>
+                                <li>For beginner courses, no prior experience is required.</li>
+                                <li>Intermediate and advanced courses may require basic knowledge or experience in the relevant field.</li>
+                                <li>Specific prerequisites are listed on the course description page. Make sure to review them before registering.</li>
+                            </ul>
                         </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              Accordion Item #2
-                            </button>
-                          </h2>
-                          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                            </div>
-                          </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq-header-3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-body-3" aria-expanded="false" aria-controls="faq-body-3">
+                            Are the courses offered online or in-person?
+                        </button>
+                    </h2>
+                    <div id="faq-body-3" class="accordion-collapse collapse" aria-labelledby="faq-header-3" data-bs-parent="#faq-container">
+                        <div class="accordion-body">Eartlink Training Institute offers both online and in-person courses to accommodate different learning preferences. You can choose the format that best suits your schedule and learning style. The mode of delivery for each course is specified in the course description.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq-header-4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-body-4" aria-expanded="false" aria-controls="faq-body-4">
+                            What kind of support is available for students during their course?
+                        </button>
+                    </h2>
+                    <div id="faq-body-4" class="accordion-collapse collapse" aria-labelledby="faq-header-4" data-bs-parent="#faq-container">
+                        <div class="accordion-body">
+                            <b>We provide comprehensive support for our students, including:</b>
+                            <ul>
+                                <li>Access to course materials and resources.</li>
+                                <li>Regular Q&A sessions with instructors.</li>
+                                <li>Discussion forums to interact with peers.</li>
+                                <li>Technical support for any issues related to course access or materials.</li>
+                                <li>Career counseling and job placement assistance upon course completion.</li>
+                            </ul>
                         </div>
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                              Accordion Item #3
-                            </button>
-                          </h2>
-                          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq-header-5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-body-5" aria-expanded="false" aria-controls="faq-body-5">
+                            Can I get a refund if I am not satisfied with a course?
+                        </button>
+                    </h2>
+                    <div id="faq-body-5" class="accordion-collapse collapse" aria-labelledby="faq-header-5" data-bs-parent="#faq-container">
+                        <div class="accordion-body">Yes, Eartlink Training Institute offers a satisfaction guarantee. If you are not satisfied with a course, you can request a refund within the first 14 days of enrollment. Please refer to our refund policy on the website for more details on the process and conditions.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq-header-6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-body-6" aria-expanded="false" aria-controls="faq-body-6">
+                           Question #6
+                        </button>
+                    </h2>
+                    <div id="faq-body-6" class="accordion-collapse collapse" aria-labelledby="faq-header-6" data-bs-parent="#faq-container">
+                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus voluptates quaerat ea maxime repellendus odit porro. Placeat molestiae, iste, nam cum saepe quibusdam modi, suscipit minus officia obcaecati ducimus quam.</div>
+                    </div>
                 </div>
             </div>
+            <button id="viewMoreBtn" type="button" class="view-more btn btn-outline-primary">view more</button>
+            <button id="viewLessBtn" class="view-less btn btn-outline-primary" style="display: none;">view less</button>
         </section>
         
     </main>
-    <?- include ('../../base/footer') ?>
+    <?- include ('../../base/footer') ?> 
 </body>
 </html>

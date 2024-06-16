@@ -98,12 +98,15 @@ section{
 .small{
     padding: 0 var(--bs-card-spacer-x);
 }
-.card-footer .btn-outline-primary{
+
+.card-footer .btn-outline-primary,
+.faqs .btn-outline-primary{
     border-color: #1f003a;
     color: #1f003a;
 }
 
-.card-footer .btn-outline-primary:hover{
+.card-footer .btn-outline-primary:hover,
+.faqs .btn-outline-primary:hover{
     background-color: #1f003a;
     color: #fff;
 }
@@ -115,33 +118,100 @@ section{
 
 
 .testimonials {
+    background-color: #fff;
     text-align: center;
-    background: #333;
-    color: #fff;
-}
-.testimonial-item img{
-    width: 150px;
-    border-radius: 50%;
-}
-.testimonial-item {
+    border-top: 5px solid #1f003a;
+    border-bottom: 5px solid #1f003a;
+    padding: 2rem 0;
+    box-shadow: 0px 1px 10px #1f003a50;
 
 }
+
+.testimonials h3 {
+    color: #1f003a;
+}
+
 .testimonial-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-item {
+    text-align: center;
+    padding: 20px;
+    /* transition: transform 0.5s ease-in-out; */
+}
+
+.testimonial-item img {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    border: 2px solid #fff;
-    box-shadow: var(--box-shadow-light);
-    /* background: #fff; */
-    
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 
-
-
-
-
-.testimonial-text p{
-    font-size: 0.8em;
+.testimonial-text {
+    background-color: #e0d4f7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
-.testimonial-text .author{
-    font-weight: 500;
-} */
+
+.testimonial-text:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent #e0d4f7 transparent;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.testimonial-text p {
+    color: #555;
+}
+
+.testimonial-text .author {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #1f003a;
+}
+
+/* Customizing carousel controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #1f003a;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Adding some vibrant colors */
+.testimonial-item:nth-child(odd) .testimonial-text {
+    background-color: #c4a7e7;
+    border-color: #af72dc;
+}
+
+.testimonial-item:nth-child(even) .testimonial-text {
+    background-color: #f7e6ff;
+    border-color: #e5b5ff;
+}
+
+
+/* FAQS */
+.faqs .btn-outline-primary{
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}

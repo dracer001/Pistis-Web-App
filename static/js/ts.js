@@ -57,6 +57,7 @@
 //     window.addEventListener('scroll', checkPosition);
 // });
 
+
 document.addEventListener('DOMContentLoaded', function () {
     const benefitItems = document.querySelectorAll('.benefit-item');
 
@@ -86,3 +87,68 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+
+
+
+// FAQS
+
+const toggleFaq = () => {
+    const viewMoreBtn = document.getElementById("viewMoreBtn");
+    const viewLessBtn = document.getElementById("viewLessBtn");
+    const faqItems = document.querySelectorAll(".accordion-item");
+
+    viewMoreBtn.addEventListener("click", function() {
+        faqItems.forEach((item, index) => {
+            if (index >= 3) { // Show items starting from index 3
+                item.style.display = "block";
+            }
+        });
+        viewMoreBtn.style.display = "none";
+        viewLessBtn.style.display = "block";
+    });
+
+    viewLessBtn.addEventListener("click", function() {
+        faqItems.forEach((item, index) => {
+            if (index >= 3) { // Hide items starting from index 3
+                item.style.display = "none";
+            }
+        });
+        viewMoreBtn.style.display = "block";
+        viewLessBtn.style.display = "none";
+    });
+
+    // Initially hide FAQ items starting from index 3
+    faqItems.forEach((item, index) => {
+        if (index >= 3) {
+            item.style.display = "none";
+        }
+    });
+}
+
+
+function checkDeviceWidth() {
+    var mediaQuery = window.matchMedia('(min-width: 900px)');
+    if (!mediaQuery.matches) {
+        toggleFaq();
+    }else{
+        const faqCollaps = document.querySelectorAll(".accordion-collapse");
+        faqCollaps.forEach((item, index) => {
+            item.removeAttribute('data-bs-parent');
+        });
+
+        const faqItems = document.querySelectorAll(".accordion-item");
+        faqItems.forEach((item, index) => {
+            item.style.display = "block";
+        });
+
+    }
+}
+    
+// Initial check when the script loads
+checkDeviceWidth();
+    
+    // Add an event listener for media query changes
+window.matchMedia('(min-width: 900px)').addEventListener('change', checkDeviceWidth);
+    // window.addEventListener('resize', checkDeviceWidth);
+    

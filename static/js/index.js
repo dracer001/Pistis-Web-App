@@ -73,17 +73,6 @@ window.addEventListener('resize', checkWidth);
 
 
 
-// function to toggle nav bar for small and medium device
-function toggleMenu() {
-    const menuIcon = document.querySelector('.menu-icon');
-    menuIcon.classList.toggle('open');
-
-    const offCanvasMenu = document.querySelector('nav');
-    offCanvasMenu.classList.toggle('open');
-}
-
-
-
 // TESTIMONIAL DISPLAY FOR Medium and Small Device
 
 var currentIndex = 0;
@@ -170,15 +159,3 @@ setInterval(nextSlide, 5000);
 //     });
 // }
 
-function submitNewsLetter() {
-    const email = document.getElementById('newsletterEmail').value;
-
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-      console.log(this.responseText);
-      }
-    xhttp.open("POST", "/training-solutions/add-email");
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("email="+email);
-  }
-  
