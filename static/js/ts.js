@@ -141,6 +141,8 @@ function checkDeviceWidth() {
         faqItems.forEach((item, index) => {
             item.style.display = "block";
         });
+        const viewMoreBtn = document.getElementById("viewMoreBtn").style.display = 'none';
+        const viewLessBtn = document.getElementById("viewLessBtn").style.display = 'none';
 
     }
 }

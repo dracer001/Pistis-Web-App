@@ -1,6 +1,6 @@
 /* MOBILE DEVICE */
 header{
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid #1f003a;
     display: flex;
     justify-content: space-between;
     align-items: end;
