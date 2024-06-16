@@ -1,0 +1,133 @@
+
+body{
+    color: #333;
+}
+.head-nav{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.nav .nav-item{
+    font-size: 0.9em;
+}
+
+.nav{
+    gap: 0.7rem;
+    --bs-nav-link-padding-x: 0;
+}
+a.nav-link{
+    color: rebeccapurple;
+    text-decoration: underline;
+}
+.hero::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero{
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    background: #f7d0ff url('../media/images/train-sol-edith.png') no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+}
+
+.hero *{
+    z-index: 2;
+}
+
+.hero-title, .hero-detail{
+    max-width: 560px;
+}
+
+.hero-title{
+    font-size: 1.2em;
+    font-weight: 600;
+    border-bottom: 1px solid #fff;
+}
+
+
+section{
+    margin-top: 3rem;
+}
+
+.benefits{
+    text-align: center;
+}
+
+.benefit-text{
+    margin-top: 1rem;
+}
+.benefit-text p{
+    margin: 0;
+}
+.benefit-title::before,
+.benefit-title::after{
+    content: "--";
+}
+.benefit-title{
+    font-weight: bold;
+}
+.benefit-icon{
+    width: 6em;
+}
+
+
+.benefit-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    margin-top: 2.5rem;
+}
+
+.benefit-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.small{
+    padding: 0 var(--bs-card-spacer-x);
+}
+
+
+.testimonials {
+    text-align: center;
+    background: #333;
+    color: #fff;
+}
+.testimonial-item img{
+    width: 150px;
+    border-radius: 50%;
+}
+.testimonial-item {
+
+}
+.testimonial-container {
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: var(--box-shadow-light);
+    /* background: #fff; */
+    
+}
+
+/* 
+
+
+
+
+.testimonial-text p{
+    font-size: 0.8em;
+}
+.testimonial-text .author{
+    font-weight: 500;
+} */

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?- include('../base/dependencies') ?>
+    <title><?= title ?></title>
+</head>
+<style>
+    body{
+        color: #fff;
+        background: black;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+    a.btn{
+        display: block;
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+</style>
+<body>
+    <div class="main">
+        <h1>
+            <?= title ?>
+            <br>
+            Coming Soon
+        </h1>
+        <a href="/" class="btn btn-primary">Back Home</a>
+    </div>
+
+</body>
+</html>
