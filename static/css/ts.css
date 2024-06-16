@@ -98,6 +98,20 @@ section{
 .small{
     padding: 0 var(--bs-card-spacer-x);
 }
+.card-footer .btn-outline-primary{
+    border-color: #1f003a;
+    color: #1f003a;
+}
+
+.card-footer .btn-outline-primary:hover{
+    background-color: #1f003a;
+    color: #fff;
+}
+
+.card-footer .btn-primary{
+    background-color: #1f003a;
+    border: 1px solid #1f003a;
+}
 
 
 .testimonials {
