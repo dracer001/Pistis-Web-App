@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?- include('../../base/dependencies') ?>
+    <link rel="stylesheet" href="/css/ts.css">
+    <link rel="stylesheet" href="/css/course.css">
+
+    <title>COURSE</title>
+</head>
+<body>
+    <?- include('../../base/header') ?>
+    <main class="container my-3">
+        <? if(course) {?>
+        <section class="course-head row row-cols-1 row-cols-lg-2 g-4">
+            <div class="intro-img">
+                <img class="mx-auto d-block img-fluid" src="/media/images/<?=course.course_image?>" alt="">
+            </div>
+            <div class="intro-text text-center">
+                <h2><?=course.course_title?></h2>
+                <p><?=course.course_summary?></p>
+                <button class="btn btn-primary"> Register Now</button>
+            </div>
+        </section>
+        <section class="course-body">
+            <div class="course-description">
+                <h3 class="mb-2">What is <?=course.course_title?></h3>
+                <p class="text-center"><?=course.course_description?></p>
+            </div>
+            <div class="synopsis mt-4">
+                <h3 class="text-center">Course Outline</h3>
+                <ul>
+                    <? course.course_synopsis.forEach(item =>{ ?>
+                        <li><?= item ?></li>
+                 <? })?>
+                </ul>
+            </div>
+        </section>
+        <section class="registration">
+            
+        </section>
+        <?}else{?>
+            <h1>Course Not Found</h1>
+        <?}?>
+    </main>
+    <?- include('../../base/footer') ?>
+</body>
+</html>

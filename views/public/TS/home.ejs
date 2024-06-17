@@ -89,76 +89,24 @@
         <section class="courses" id="courses">
             <h3 class="mb-4">Explore Our Courses</h3>
             <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5">
+                <? if (courses) { ?>
+                <? courses.forEach(course => { ?>
                 <div class="col">
                   <div class="card h-100">
-                    <img src="media/images/devops.jpg" class="card-img-top" alt="...">
+                    <img src="media/images/<?=course.course_image?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Dev Ops</h5>
-                      <p class="card-text">Master the fundamentals of DevOps and streamline your software development and operations processes.</p>
+                      <h5 class="card-title"><?= course.course_title ?></h5>
+                      <p class="card-text"><?= course.course_summary ?></p>
                     </div>
-                    <div class="small"><small class="text-body-secondary">Course Duration: 3 months</small></div>
+                    <div class="small"><small class="text-body-secondary">Course Duration: <?= course.course_duration ?></small></div>
                     <div class="card-footer d-flex justify-content-between">
-                        <a href="" class="btn btn-outline-primary">View</a>
+                        <a href="training-solution/course/<?=course._id?>" class="btn btn-outline-primary">View</a>
                         <a href="" class="btn btn-primary">Register</a>
                     </div>
                   </div>
                 </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="media/images/ml.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Machine Learning</h5>
-                      <p class="card-text">Discover the basics of machine learning and build your first predictive models with our comprehensive introductory course.</p>
-                    </div>
-                    <div class="small"><small class="text-body-secondary">Course Duration: 3 months</small></div>
-                    <div class="card-footer d-flex justify-content-between">
-                        <a href="" class="btn btn-outline-primary">View</a>
-                        <a href="" class="btn btn-primary">Register</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="media/images/cs.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Cyber Security</h5>
-                      <p class="card-text">Explore the world of cybersecurity and learn to protect data and systems from digital threats.</p>
-                    </div>
-                    <div class="small"><small class="text-body-secondary">Course Duration: 3 months</small></div>
-                    <div class="card-footer d-flex justify-content-between">
-                        <a href="" class="btn btn-outline-primary">View</a>
-                        <a href="" class="btn btn-primary">Register</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="media/images/cisco.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">CISCO</h5>
-                      <p class="card-text">Learn essential Cisco networking skills to advance your career in IT infrastructure and networking.</p>
-                    </div>
-                    <div class="small"><small class="text-body-secondary">Course Duration: 3 months</small></div>
-                    <div class="card-footer d-flex justify-content-between">
-                        <a href="" class="btn btn-outline-primary">View</a>
-                        <a href="" class="btn btn-primary">Register</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="media/images/devops.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Dev Ops</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="small"><small class="text-body-secondary">Course Duration: 3 months</small></div>
-                    <div class="card-footer d-flex justify-content-between">
-                        <a href="" class="btn btn-outline-primary">View</a>
-                        <a href="" class="btn btn-primary">Register</a>
-                    </div>
-                  </div>
-                </div>
+                <? })?>
+                <? } ?>
               </div>
         </section>
         <section class="testimonials rounded" id="testimonies" class="carousel slide" data-bs-ride="carousel">

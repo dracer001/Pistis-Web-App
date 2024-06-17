@@ -13,6 +13,7 @@ const emailController = require('../../controller/adminController')
 
 router.get('/', TS.index)
 
+router.get('/course/:id', TS.viewCourse)
 // router.post('/add-email', checkpath, emailController.createEmail)
 
 

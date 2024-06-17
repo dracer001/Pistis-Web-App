@@ -102,7 +102,8 @@ section{
 }
 
 .card-footer .btn-outline-primary,
-.faqs .btn-outline-primary{
+.faqs .btn-outline-primary,
+.btn-outline-primary{
     border-color: #1f003a;
     color: #1f003a;
 }
@@ -113,7 +114,8 @@ section{
     color: #fff;
 }
 
-.card-footer .btn-primary{
+.card-footer .btn-primary,
+.btn-primary{
     background-color: #1f003a;
     border: 1px solid #1f003a;
 }
