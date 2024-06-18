@@ -36,7 +36,40 @@
             </div>
         </section>
         <section class="registration">
-            
+            <form action="" class="border reg-form">
+                <h3 class="text-center my-3">Course Registration</h3>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="full-name" aria-describedby="full-name" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="email" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="course" class="form-label">Course</label>
+                    <input type="text" id="course" class="form-control" value="<?=course.course_title?>" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="course-duration" class="form-label">Duration</label>
+                    <input type="text" id="disabledTextInput" class="form-control" value="<?=course.course_duration?>" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="course-price" class="form-label">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text">N</span>
+                        <input type="text" id="course-price" class="form-control" value="<?=course.course_price?>" disabled>
+                        <span class="input-group-text">.00</span>
+                    </div>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+                    <label class="form-check-label" for="exampleCheck1">save my details on this browser</label>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary"> Submit</button>
+                </div>
+            </form>
         </section>
         <?}else{?>
             <h1>Course Not Found</h1>

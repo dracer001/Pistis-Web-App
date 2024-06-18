@@ -1,3 +1,9 @@
+header{
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.281);
+}
 .course-head.row{
     place-items: center;
+}
+.reg-form{
+    padding: 1rem;
 }
