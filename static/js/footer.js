@@ -1,4 +1,4 @@
-function submitNewsLetter() {
+function submitNewsLetter(btn) {
     const email = document.getElementById('newsletterEmail').value;
 
     const xhttp = new XMLHttpRequest();
@@ -8,6 +8,18 @@ function submitNewsLetter() {
       try {
         const response = JSON.parse(this.responseText);
         console.log(response);
+        if('success' in response){
+          btn.innerText = "Subscribed";
+          btn.style.backgroundColor = 'green'
+        }
+        else if('warning' in response){
+          btn.innerText = "Subscribed";
+          btn.style.backgroundColor = 'green'
+        }
+        else if('error' in response){
+          btn.innerText = "Subscribe";
+          btn.style.backgroundColor = 'red'
+        }
       } catch (e) {
         console.error('Error parsing JSON:', e);
       }
