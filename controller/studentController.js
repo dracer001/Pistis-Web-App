@@ -1,5 +1,4 @@
 const Student = require('../models/registration');
-const Course = require('../models/course');
 
 // Function to get all students
 const getAllStudent = async(req, res, next) =>{
@@ -13,18 +12,20 @@ const getAllStudent = async(req, res, next) =>{
 }
 
 // Function to create a new student
-const createStudent = async (req, res) => {
+const createStudent = async (req, res, template_route) => {
     try {
         const { name, email, course_id } = req.body;
-
-        // Check if the email already exists
-        // Student can have more than one course registered to It's email
-        const existingStudent = await Student.findOne({ email: email });
-        // if (existingStudent) {
-        //     req.flash('error_msg', 'Student with this email already exists');
-        //     return res.redirect('/students/all');
-        // }
-
+        // Check if a student with the same name, email, and course_id already exists
+        const existingStudent = await Student.findOne({
+            name: name,
+            email: email,
+            course_id: course_id
+        });
+        
+        if (existingStudent) {
+            req.flash('warning_msg', 'Record Already Exists!');
+            return res.redirect(template_route);
+        }
         const student = new Student({
             name: name,
             email: email,
@@ -33,10 +34,11 @@ const createStudent = async (req, res) => {
         await student.save();
 
         req.flash('success_msg', 'Student created successfully');
-        res.redirect('/students/all');
+        res.redirect(template_route);
     } catch (err) {
         console.error(err);
-        res.status(500).send('Server Error');
+        req.flash('error_msg', 'Error occured while submiting form');
+        res.status(500).redirect(template_route);
     }
 }
 

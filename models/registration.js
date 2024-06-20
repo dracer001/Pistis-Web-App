@@ -9,7 +9,6 @@ const studentSchema = new Schema({
     email: {
         type: String,
         required: true,
-        unique: true
     },
     course_id: {
         type: mongoose.Schema.Types.ObjectId, // Use ObjectId to reference user

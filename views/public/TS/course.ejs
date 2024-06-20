@@ -10,21 +10,47 @@
 <body>
     <?- include('../../base/header') ?>
     <main class="container my-3">
+        <? if (success_msg.length >0) { ?>
+            <div class="alert alert-success d-flex align-items-center alert-dismissible fade show" role="alert">
+                <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                <div>
+                    <?= success_msg ?>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <? }else if (warning_msg.length > 0) { ?>
+            <div class="alert alert-warning d-flex align-items-center alert-dismissible fade show" role="alert">
+                <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Warning:"><use xlink:href="#info-fill"/></svg>
+                <div>
+                    <?= warning_msg ?>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <? }else if (error_msg.length > 0) { ?>
+            <div class="alert alert-danger d-flex align-items-center alert-dismissible fade show" role="alert">
+                <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                <div>
+                  <?= error_msg ?>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <? } ?>
+
         <? if(course) {?>
-        <section class="course-head row row-cols-1 row-cols-lg-2 g-4">
+        <section class="course-head row row-cols-1 row-cols-lg-2 g-4 shadow-sm pb-5">
             <div class="intro-img">
                 <img class="mx-auto d-block img-fluid" src="/media/images/<?=course.course_image?>" alt="">
             </div>
             <div class="intro-text text-center">
                 <h2><?=course.course_title?></h2>
                 <p><?=course.course_summary?></p>
-                <button class="btn btn-primary"> Register Now</button>
+                <a href="#register" class="btn btn-primary"> Register Now</a>
             </div>
         </section>
         <section class="course-body">
             <div class="course-description">
                 <h3 class="mb-2">What is <?=course.course_title?></h3>
-                <p class="text-center"><?=course.course_description?></p>
+                <p class=""><?=course.course_description?></p>
             </div>
             <div class="synopsis mt-4">
                 <h3 class="text-center">Course Outline</h3>
@@ -33,11 +59,12 @@
                         <li><?= item ?></li>
                  <? })?>
                 </ul>
+                <div class="small">Course duration: <?=course.course_duration?></div>
             </div>
         </section>
-        <section class="registration">
-            <form action="" class="border reg-form">
-                <h3 class="text-center my-3">Course Registration</h3>
+        <section class="registration" id="register">
+            <form action="" method="post" class="border reg-form shadow-sm rounded">
+                <h3 class="text-center mt-2 mb-4">Course Registration</h3>
                 <div class="mb-3">
                     <label for="name" class="form-label">Full Name</label>
                     <input type="text" class="form-control" id="full-name" aria-describedby="full-name" name="name">
@@ -66,8 +93,9 @@
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
                     <label class="form-check-label" for="exampleCheck1">save my details on this browser</label>
                 </div>
+                <input type="hidden" name="course_id" value="<?=course._id?>">
                 <div class="mb-3">
-                    <button class="btn btn-primary"> Submit</button>
+                    <button type="submit" class="btn btn-primary"> Submit</button>
                 </div>
             </form>
         </section>
