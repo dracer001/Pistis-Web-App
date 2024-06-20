@@ -44,3 +44,19 @@ div.alert svg{
     width: 20px;
     height: 20px;
 }
+
+@media (min-width: 992px){
+    main.container{
+        margin-top: 3rem !important;
+    }
+    .course-description{
+        text-align: center;
+    }
+    div.synopsis{
+        margin-top: 3rem !important;
+    }
+    .reg-form button.btn{
+        /* padding: 1rem 2rem; */
+        font-size: 1.0em;
+    }
+}

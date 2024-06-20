@@ -53,8 +53,28 @@ const createEmail = async(req, res) =>{
     }
 }
 
+// Function to create a new email subscription
+const checkEmail = async(req, res) =>{
+    try {
+        const { email } = req.body;
+        const existingEmail = await Newsletter.findOne({ email: email });
+        if (existingEmail) {
+            // req.flash('warning_msg', 'Email already subscribed');
+            return res.json({'exists': 'Email already exists'});
+        }
+        else{
+            res.json({'message': "email not found"});
+        }
+        // req.flash('success_msg', 'Email subscribed successfully');
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({'error': "Server Error"});
+    }
+}
+
 module.exports = {
     createEmail,
     deleteEmail,
-    getEmails
+    getEmails,
+    checkEmail
 }

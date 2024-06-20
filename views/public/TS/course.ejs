@@ -4,7 +4,7 @@
     <?- include('../../base/dependencies') ?>
     <link rel="stylesheet" href="/css/ts.css">
     <link rel="stylesheet" href="/css/course.css">
-
+    <script src="/js/course.js" defer></script>
     <title>COURSE</title>
 </head>
 <body>
@@ -53,8 +53,8 @@
                 <p class=""><?=course.course_description?></p>
             </div>
             <div class="synopsis mt-4">
-                <h3 class="text-center">Course Outline</h3>
-                <ul>
+                <h3 class="text-center mb-3">Course Outline</h3>
+                <ul class="row row-cols-lg-2">
                     <? course.course_synopsis.forEach(item =>{ ?>
                         <li><?= item ?></li>
                  <? })?>
@@ -63,25 +63,25 @@
             </div>
         </section>
         <section class="registration" id="register">
-            <form action="" method="post" class="border reg-form shadow-sm rounded">
+            <form action="" method="post" class="border reg-form shadow-sm rounded row gx-5 gy-3" onsubmit="saveData()">
                 <h3 class="text-center mt-2 mb-4">Course Registration</h3>
-                <div class="mb-3">
+                <div class="mb-3 col-lg-6">
                     <label for="name" class="form-label">Full Name</label>
                     <input type="text" class="form-control" id="full-name" aria-describedby="full-name" name="name">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 col-lg-6">
                     <label for="email" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="email" aria-describedby="email" name="email">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 col-lg-4">
                     <label for="course" class="form-label">Course</label>
                     <input type="text" id="course" class="form-control" value="<?=course.course_title?>" disabled>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 col-lg-4">
                     <label for="course-duration" class="form-label">Duration</label>
                     <input type="text" id="disabledTextInput" class="form-control" value="<?=course.course_duration?>" disabled>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 col-lg-4">
                     <label for="course-price" class="form-label">Price</label>
                     <div class="input-group">
                         <span class="input-group-text">N</span>
@@ -90,11 +90,11 @@
                     </div>
                 </div>
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
-                    <label class="form-check-label" for="exampleCheck1">save my details on this browser</label>
+                    <input type="checkbox" class="form-check-input" id="cookie-check" checked>
+                    <label class="form-check-label" for="cookie-check">save my details on this browser</label>
                 </div>
                 <input type="hidden" name="course_id" value="<?=course._id?>">
-                <div class="mb-3">
+                <div class="mb-3 d-lg-flex justify-content-center">
                     <button type="submit" class="btn btn-primary"> Submit</button>
                 </div>
             </form>
