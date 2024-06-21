@@ -1,12 +1,28 @@
+
+section{
+  padding: 1rem 0.5rem;
+  margin-top: 3rem;
+}
+h3{
+  color: #1f003a;
+}
 header{
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.281);
     margin-bottom: 0;
 }
+
+.course-head{
+  background: #eee;
+  /* color: #fff; */
+}
 .course-head.row{
     place-items: center;
 }
+.intro-text p{
+}
 .reg-form{
     padding: 1rem;
+    background: #eee;
 
 }
 
@@ -14,7 +30,24 @@ header{
     background-color: #eee;
     padding: 0.5rem 1rem;
 }
+.ico-bg{
+  background-color: #1f003a;
+  color: #fff;
+}
 
+.course-form-btn{
+  width: 100%;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active .btn-primary:focus{
+  background-color: #1f003a;
+  border: #1f003a;
+}
+
+.course-description-text{
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+}
 @keyframes fadeIn {
     from {
       opacity: 0;
@@ -45,7 +78,13 @@ div.alert svg{
     height: 20px;
 }
 
+.form-control[disabled]{
+  border: 1px solid #fff;
+}
 @media (min-width: 992px){
+  body{
+    font-size: 1.5rem;
+  }
     main.container{
         margin-top: 3rem !important;
     }
@@ -58,5 +97,8 @@ div.alert svg{
     .reg-form button.btn{
         /* padding: 1rem 2rem; */
         font-size: 1.0em;
+    }
+    .intro-text .btn{
+      font-size: 1.0em;
     }
 }

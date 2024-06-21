@@ -10,17 +10,15 @@ function submitNewsLetter(btn) {
         console.log(response);
         if('success' in response){
           btn.innerText = "Subscribed";
-          btn.style.backgroundColor = 'green'
           btn.disabled = true;
         }
         else if('warning' in response){
           btn.innerText = "Subscribed";
-          btn.style.backgroundColor = 'green'
           btn.disabled = true;
         }
         else if('error' in response){
           btn.innerText = "Subscribe";
-          btn.style.backgroundColor = 'red'
+          btn.style.color = '#ff4500'
         }
       } catch (e) {
         console.error('Error parsing JSON:', e);
@@ -55,12 +53,10 @@ function submitNewsLetter(btn) {
             console.log(response);
             if ('exists' in response) {
               btn.textContent = "Subscribed";
-              btn.style.backgroundColor = 'green';
               btn.disabled = true;
             } else {
               btn.disabled = false;
               btn.textContent = "Subscribe";
-              btn.style.backgroundColor = 'transparent';
             }
           } catch (e) {
             console.error('Error parsing JSON:', e);

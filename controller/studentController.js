@@ -24,7 +24,11 @@ const createStudent = async (req, res, template_route) => {
         
         if (existingStudent) {
             req.flash('warning_msg', 'Record Already Exists!');
-            return res.redirect(template_route);
+            if (template_route === null) {
+                return res.json({"warning": "record already exists"});
+              } else {
+                return res.redirect(template_route);
+              }            
         }
         const student = new Student({
             name: name,
@@ -34,11 +38,19 @@ const createStudent = async (req, res, template_route) => {
         await student.save();
 
         req.flash('success_msg', 'Student created successfully');
-        res.redirect(template_route);
+        if (template_route === null) {
+            return res.json({"success": "record created"});
+          } else {
+            return res.redirect(template_route);
+          }
     } catch (err) {
         console.error(err);
         req.flash('error_msg', 'Error occured while submiting form');
-        res.status(500).redirect(template_route);
+        if (template_route === null) {
+            return res.json({"error": "server error"});
+        } else {
+            return res.status(500).redirect(template_route);
+        }
     }
 }
 

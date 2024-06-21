@@ -114,10 +114,9 @@ section{
     color: #fff;
 }
 
-.card-footer .btn-primary,
-.btn-primary{
-    background-color: #1f003a;
-    border: 1px solid #1f003a;
+.btn-primary, .btn-primary:hover, .btn-primary:active .btn-primary:focus{
+  background-color: #1f003a;
+  border: #1f003a;
 }
 
 
@@ -282,6 +281,20 @@ section{
     }
 }
 
+
+
+/* MODAL FORM */
+div.modal{
+    --bs-modal-width: 860px;
+    font-size: 0.8em;
+}
+
+.modal-body form.row{
+    --bs-gutter-x: 0rem;
+}
+
+
+
 @media (min-width: 992px){
     header{
         padding-left: 3rem;
@@ -295,6 +308,18 @@ section{
     }
     .hero-text{
         margin-left:5rem
+    }
+    div.modal{
+    }
+    .modal-body{
+        padding: 1rem 2rem;
+    }
+    div.modal div.input-group{
+        width: 25%;
+        }
+    div.modal .form-floating .form-control{
+        margin-top: 0.5rem;
+        font-size: 0.9em;
     }
 }
 
@@ -310,3 +335,5 @@ section{
         padding: 0.6rem 0rem;
     }
 }
+
+

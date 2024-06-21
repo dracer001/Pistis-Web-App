@@ -12,4 +12,6 @@ router.get('/it-solution', PUBLIC.itHome)
 
 router.post('/add-newsLetter', newsLetter.createEmail)
 router.post('/checkNewsletter', newsLetter.checkEmail)
+
+
 module.exports = router;

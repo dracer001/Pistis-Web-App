@@ -5,9 +5,63 @@
     <link rel="stylesheet" href="css/ts.css">
     <title>Pistis-Training Solutions</title>
     <script src="js/ts.js" defer></script>
+    <script src="js/storage.js" defer></script>
 </head>
 
 <body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-center" id="staticBackdropLabel">Course Registration</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="" method="post" class="reg-form shadow-sm rounded row justify-content-between" onsubmit="return false;">
+                <div class="form-floating mb-3 col-lg-5">
+                    <input  type="text" class="form-control form-control-sm" id="full-name" aria-describedby="full-name" name="name">
+                    <label for="full-name">Full Name</label>
+                </div>
+                <div class="form-floating mb-3 col-lg-5">
+                    <input type="email" class="form-control form-control-sm" id="email" aria-describedby="email" name="email">
+                    <label for="email" class="form-label">Email address</label>
+                </div>
+                <div class="form-floating mb-3 col-lg-4">
+                    <input type="text" id="course" class="form-control form-control-sm" disabled>
+                    <label for="course" class="form-label">Course</label>
+
+                </div>
+                <div class="form-floating mb-3 col-lg-4">
+                    <input type="text" id="course-duration" class="form-control form-control-sm" disabled>
+                    <label for="course-duration" class="form-label">Duration</label>
+                </div>
+                <div class="input-group mb-3 col-lg-4">
+                    <span class="input-group-text">N</span>
+                    <div class="form-floating">
+                        <input type="text" id="course-price" class="form-control form-control-sm" disabled>
+                        <label for="course-price" class="form-label">Price</label>           
+                    </div>
+                    <span class="input-group-text">.00</span>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="cookie-check" checked>
+                    <label class="form-check-label" for="cookie-check">save my details on this browser</label>
+                </div>
+                <input type="hidden" name="course_id" id="course_id">
+            </form>
+        </div>
+        <div class="modal-footer justify-content-start">
+          <button type="button" class="btn btn-primary" onclick="registerCourse(this); return false">Register</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
     <?- include('../../base/header') ?>
     <main class="container">
 
@@ -101,7 +155,7 @@
                     <div class="small"><small class="text-body-secondary">Course Duration: <?= course.course_duration ?></small></div>
                     <div class="card-footer d-flex justify-content-between">
                         <a href="training-solution/course/<?=course._id?>" class="btn btn-outline-primary">View</a>
-                        <a href="" class="btn btn-primary">Register</a>
+                        <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="displayForm('<?= course._id ?>')">Register</a>
                     </div>
                   </div>
                 </div>

@@ -154,3 +154,80 @@ checkDeviceWidth();
 window.matchMedia('(min-width: 900px)').addEventListener('change', checkDeviceWidth);
     // window.addEventListener('resize', checkDeviceWidth);
     
+
+
+function displayForm(course_id) {
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onload = function() {
+        if (this.status === 200) {
+        console.log(this);
+        try {
+          const response = JSON.parse(this.responseText);
+          console.log(response);
+          createForm(response)
+        } catch (err) {
+          console.error('Error parsing JSON:', err);
+        }
+      } else {
+         console.error('Request failed with status:', this.status);
+      }
+    }
+    xhttp.open("GET", "/training-solution/get-course/"+course_id);
+    xhttp.send();
+}
+
+function createForm(course){
+    document.getElementById('course').value = course.course_title
+    document.getElementById('course-duration').value = course.course_duration
+    document.getElementById('course-price').value = course.course_price
+    document.getElementById('course_id').value = course._id
+}
+
+
+function registerCourse(btn) {
+    const name = document.getElementById('full-name').value;
+    const email = document.getElementById('email').value;
+    const course_id = document.getElementById('course_id').value;
+    
+    if(document.getElementById('cookie-check').checked){
+        localStorage.setItem('name', name)
+        localStorage.setItem('email', email)
+    }else{
+        localStorage.removeItem('name')
+        localStorage.removeItem('email')
+    }
+
+    const xhttp = new XMLHttpRequest()
+
+    xhttp.onload = function() {
+        if (this.status === 200) {
+            console.log(this);
+            try {
+              const response = JSON.parse(this.responseText);
+              console.log(response);
+              if('success' in response){
+                btn.innerText = "Registered";
+                btn.style.backgroundColor = 'green'
+                btn.disabled = true;
+              }
+              else if('warning' in response){
+                btn.innerText = "Registered";
+                btn.style.backgroundColor = 'green'
+                btn.disabled = true;
+              }
+              else if('error' in response){
+                btn.innerText = "Subscribe";
+                btn.style.backgroundColor = 'red'
+              }
+            } catch (e) {
+              console.error('Error parsing JSON:', e);
+            }
+        } else {
+             console.error('Request failed with status:', this.status);
+        }
+    }
+    xhttp.open('POST', "/training-solution/reg-student")
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send(`name=${name}&email=${email}&course_id=${course_id}`)
+}

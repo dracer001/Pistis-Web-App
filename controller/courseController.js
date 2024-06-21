@@ -64,6 +64,9 @@ const viewCourse = async function(req, res, template_view) {
         if (!course) {
             return res.status(404).send('Course not found');
         }
+        if(template_view == null){
+            return res.json(course)
+        }
         res.render(template_view, { course: course });
     } catch (err) {
         console.error(err);

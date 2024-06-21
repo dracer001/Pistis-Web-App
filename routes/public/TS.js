@@ -16,6 +16,11 @@ router.get('/', TS.index)
 router.route('/course/:id')
     .get(TS.viewCourse)
     .post(TS.studentReg)
+
+router.get('/get-course/:id', TS.getCourse)
+
+router.post('/reg-student', TS.studentRegAPI)
+
 // router.post('/add-email', checkpath, emailController.createEmail)
 
 
