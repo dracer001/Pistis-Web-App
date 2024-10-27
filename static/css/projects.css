@@ -95,6 +95,7 @@ header .company img{
 
 .course img{
     height: 100%;
+    object-fit: cover;
 }
 .course-name{
     position: absolute;
@@ -113,6 +114,17 @@ header .company img{
     background-color: #fff;
 }
 
+.work-section{
+    background-image: linear-gradient(135deg, rgb(166, 122, 247), aliceblue, white) ;
+}
+
+.work{
+    list-style: none;
+
+}
+.work i{
+    color: #0e001a;
+}
 @media screen and (max-width: 768px){
     .myCarousel img{
         height: auto;
