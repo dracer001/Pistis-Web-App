@@ -7,6 +7,10 @@ const esHome = (req, res)=>{
     res.render('public/future', {title: "ENERGY SOLUTIONS"})
 }
 
+const projectsShowcase = (req, res)=>{
+    res.render('public/projectShowcase', {title: "Pistis Projects"})
+}
+
 const itHome = (req, res)=>{
     res.render('public/future', {title: "IT SOLUTIONS"})
 }
@@ -14,5 +18,6 @@ const itHome = (req, res)=>{
 module.exports = {
     index,
     esHome,
-    itHome
+    itHome,
+    projectsShowcase
 }
