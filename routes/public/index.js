@@ -9,10 +9,11 @@ router.get('/', PUBLIC.index)
 
 router.get('/energy-solution', PUBLIC.esHome)
 
-router.get('/project-showcase', PUBLIC.projectsShowcase)
+router.get('/training-solution', PUBLIC.trainingSolutionHome)
+
 router.post('/send-mail', sendEmail.sendEmail)
 
-router.get('/it-solution', PUBLIC.itHome)
+router.get('/it-solution', PUBLIC.itSolutionHome)
 
 router.post('/add-newsLetter', newsLetter.createEmail)
 router.post('/checkNewsletter', newsLetter.checkEmail)

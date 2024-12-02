@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const COURSE_DB = require('../models/course')
+const Gallary = require('../models/gallary')
+
 const displayLogin = async (req, res) =>{
-    res.render('templates/admin/login', { error_msg: req.flash('error_msg') })
+    res.render('admin/login', { error_msg: req.flash('error_msg') })
 }
 
 const authLogin = async (req, res) =>{
@@ -19,13 +20,54 @@ const authLogin = async (req, res) =>{
 }
 
 const adminIndex = async(req, res) =>{
-    res.render('templates/admin/index')
+    res.render('admin/index')
 }
 
-const displayUpload = async(req, res) =>{
-    res.render('templates/admin/upload_course')
+const uploadGallaryForm = async(req, res) =>{
+    res.render('admin/upload-gallary')
 }
 
+const addGallary = async (req, res) => {
+    try {
+        const { caption } = req.body;
+        const { file } = req;  // Use `file` to access the uploaded file
+
+        if (!caption || !file) {
+            req.flash('error_msg', 'Caption and image are required');
+            return res.redirect('/admin/upload-gallary');
+        }
+
+        // Check if file validation failed
+        if (req.fileValidationError) {
+            req.flash('error_msg', req.fileValidationError);
+            return res.redirect('/admin/upload-gallary');
+        }
+
+        // Create a new image entry in the database
+        const newImage = new Gallary({
+            gallary_caption: caption,
+            gallary_file_path: file.path, // Store the local path of the uploaded file
+        });
+
+        await newImage.save();
+
+        req.flash('success_msg', 'File uploaded successfully');
+        return res.redirect('/admin/upload-gallary');
+    } catch (error) {
+        console.error(error);
+        req.flash('error_msg', 'Error uploading image');
+        return res.redirect('/admin/upload-gallary');
+    }
+};
+  
+  // Route to fetch an image by its path
+//   app.get('/image/:filename', (req, res) => {
+//     const { filename } = req.params;
+  
+//     // Send the image file located in '/uploads/images'
+//     res.sendFile(path.join(__dirname, 'uploads', 'images', filename));
+//   });
+  
 // const uploadCourse = async(req, res) =>{
 //     await upload.array('course-image')(req, res, (err)=>{
 //         if (err instanceof multer.MulterError) {
@@ -72,5 +114,6 @@ module.exports = {
     displayLogin,
     authLogin,
     adminIndex,
-    displayUpload,
+    uploadGallaryForm,
+    addGallary
 }

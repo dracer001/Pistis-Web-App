@@ -1,0 +1,27 @@
+
+
+
+.hero-section {
+    background: url('../media/images/networking-hero.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 120px 0;
+}
+
+.service-icon {
+    font-size: 40px;
+    color: #6f42c1;
+}
+
+.service-card {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.solution-list{
+    list-style: none;
+}

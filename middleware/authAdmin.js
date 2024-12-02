@@ -1,18 +1,23 @@
 const authAdmin = async (req, res, next) => {
-    if(req.url.includes('/admin-panel')){
-        if(req.url === '/admin-panel/login'){
-            console.log(req.url)
+    // Only apply this check to routes that include '/admin'
+    if (req.url.includes('/admin')) {
+        // Skip the login route
+        if (req.url === '/admin/login') {
             return next();
-        }else{
+        } else {
+            // If there's a session auth flag set, proceed to the next middleware
             if (req.session.auth) {
                 return next();
             } else {
+                // If not authenticated, redirect to login page and show flash message
                 req.flash('error_msg', 'Please log in to view that resource');
-                res.redirect('/admin-panel/login');
+                return res.redirect('/admin/login');
             }
         }
     }
+    
+    // If the request is not part of the admin panel, just proceed to the next middleware
     next();
-}
+};
 
-module.exports = authAdmin
+module.exports = authAdmin;

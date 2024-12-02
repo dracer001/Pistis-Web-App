@@ -7,17 +7,17 @@ const esHome = (req, res)=>{
     res.render('public/future', {title: "ENERGY SOLUTIONS"})
 }
 
-const projectsShowcase = (req, res)=>{
-    res.render('public/projectShowcase', {title: "Pistis Projects"})
+const trainingSolutionHome = (req, res)=>{
+    res.render('public/trainingSol', {title: "Pistis Training Solutions"})
 }
 
-const itHome = (req, res)=>{
-    res.render('public/future', {title: "IT SOLUTIONS"})
+const itSolutionHome = (req, res)=>{
+    res.render('public/itSol', {title: "IT SOLUTIONS"})
 }
 
 module.exports = {
     index,
     esHome,
-    itHome,
-    projectsShowcase
+    trainingSolutionHome,
+    itSolutionHome
 }

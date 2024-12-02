@@ -21,7 +21,7 @@ const flashWare = require('./middleware/flash')
 // ROUTES IMPORTS
 const index_route = require('./routes/public/index')
 const TS_route = require('./routes/public/TS')
-// const adminRoute = require('./routes/admin');
+const adminRoute = require('./routes/admin');
 
 
 // CONFIGS
@@ -52,11 +52,11 @@ app.set('view options', {delimiter: '?'});
 
 app.use('/', index_route)
 
-app.use(databaseWare)
-app.use('/training-solution', TS_route)
+// app.use(databaseWare)
+// app.use('/training-solution', TS_route)
 
-// app.use(authAdmin)
-// app.use('/admin-panel', adminRoute)
+app.use(authAdmin)
+app.use('/admin', adminRoute)
 
 
 

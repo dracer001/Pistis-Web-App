@@ -1,0 +1,70 @@
+<style>
+    /* Flash message container */
+    .flash-message {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 600px;
+        z-index: 9999;
+        opacity: 1;
+        animation: slideDown 0.5s ease-out, slideUp 0.5s 6s forwards; /* Slide down and slide up animations */
+    }
+    
+    /* Animation to slide the message down */
+    @keyframes slideDown {
+        from {
+            top: -50px;
+            opacity: 0;
+        }
+        to {
+            top: 0;
+            opacity: 1;
+        }
+    }
+    
+    /* Animation to slide the message up */
+    @keyframes slideUp {
+        from {
+            top: 0;
+            opacity: 1;
+        }
+        to {
+            top: -50px;
+            opacity: 0;
+        }
+    }
+    </style>
+    
+    <script>
+        // Function to display the flash message with specific type and text
+        function showFlashMessage(type, message) {
+            const flashMessage = document.createElement('div');
+            flashMessage.classList.add('flash-message', 'alert', 'alert-' + type);
+            flashMessage.textContent = message;
+    
+            // Append the flash message to the body
+            document.body.appendChild(flashMessage);
+    
+            // Set a timeout to remove the message after 6 seconds
+            setTimeout(() => {
+                flashMessage.remove();
+            }, 6500);  // Wait 6.5 seconds before removing the message
+        }
+    
+        // Display flash messages based on the variables passed from the server
+        <? if (success_msg.length >0) { ?>
+            showFlashMessage('success', '<?= success_msg ?>');
+        <? } ?>
+        <? if (warning_msg.length > 0) { ?>
+            showFlashMessage('warning', '<?= warning_msg ?>');
+        <? } ?>
+        <? if (error_msg.length > 0) { ?>
+            showFlashMessage('danger', '<?= error_msg ?>');
+        <? } ?>
+        <? if (info_msg.length > 0) { ?>
+            showFlashMessage('info', '<?= info_msg ?>');
+        <? } ?>
+    </script>
+    

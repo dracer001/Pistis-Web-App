@@ -4,132 +4,126 @@
     <?- include('../base/dependencies') ?>
     <link rel="stylesheet" href="css/index.css">
     <title>Pistis|Home</title>
-    <script src="js/index.js" defer></script>
+    <!-- <script src="js/index.js" defer></script> -->
 
 </head>
 <body>
     <?- include('../base/header') ?>
 
-    <div class="hero">
-        <p class="hero-title">Pistis Engineering Solutions</p>
-        <p class="hero-detail">Discover the power of innovation and expertise.<br> We specialize in IT solutions, training programs, and sustainable energy solutions to drive your success forward.</p>
-        <div class="hero-btn">
-            <button type="button" class="btn btn-primary">Get Started</button>
-            <button type="button" class="btn btn-outline-primary">Contact Us</button>
+    <div id="hero-section" class="carousel slide hero">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#hero-section" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#hero-section" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#hero-section" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="media/images/learning-hero.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+              <h5>Training Solution</h5>
+              <p>Unlock your potential with tech training that drives innovation, sharpens skills, and leads you to success in the digital world.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="media/images/networking-hero.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+              <h5>IT Solution</h5>
+              <p>Delivering advanced IT solutions with a focus on efficient server management and reliable infrastructure.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="media/images/energy-hero.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+              <h5>Energy Solution</h5>
+              <p>Providing innovative energy solutions for sustainable, efficient, and reliable power management.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-section" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-section" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <main class="container-lg main">
-        <section class="about-us" id="about-us">
-            <div class="company-info">
-                <h3 class="company-info-title">Who We Are</h3>
-                <p class="company-info-details">
-                    At Pistis Engineering Solutions, we are dedicated professionals delivering innovative IT solutions, comprehensive training, and sustainable energy services. Our mission is to empower businesses and drive success with tailored, high-quality solutions. Guided by our core values of integrity and excellence, we build lasting partnerships and make a positive impact in the digital landscape.
-                </p>     
-            </div>
 
-            <div class="company-img-rep">
-                <h3>What we Stand For</h3>
-                <div class="graphic-rep">
-                    <div class="graphic-rep-item center">Innovation</div>
-                    <div class="graphic-rep-item top-right">Excellence</div>
-                    <div class="graphic-rep-item top-left">Integrity</div>
-                    <div class="graphic-rep-item bottom-right">Commitment</div>
-                    <div class="graphic-rep-item bottom-left">Collaboration</div>
+      
+    <div class="container px-4 py-5" id="hanging-icons">
+      <h2 class="pb-2 border-bottom text-purple">Our Services</h2>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 p-2 rounded-3">
+            <img src="/media/icons/training-sol-icon.png" width="60" height="60" alt="">
+          </div>
+          <div>
+            <h3 class="fs-2 text-body-emphasis">Training Solution</h3>
+            <p>Our training solutions include a wide range of courses for individuals, organizations, and institutions, designed to enhance skills and drive success in today's competitive landscape.</p>
+            <a href="/training-solution" class="btn btn-purple">
+              Learn more
+            </a>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 p-2 rounded-3">
+            <img src="/media/icons/it-sol-icon.png" width="60" height="60" alt="">
+          </div>
+          <div>
+            <h3 class="fs-2 text-body-emphasis">IT Solution</h3>
+            <p>Our IT solutions specialize in networking, server installation, and management, providing businesses with reliable, secure, and scalable infrastructure to support their growth and operational needs.</p>
+            <a href="/it-solution" class="btn btn-purple">
+              Learn more
+            </a>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 p-2 rounded-3">
+            <img src="/media/icons/energy-sol-icon.png" width="60" height="60" alt="">
+          </div>
+          <div>
+            <h3 class="fs-2 text-body-emphasis">Energy Solution</h3>
+            <p>With our energy solutions, tap into the power of solar, battery storage, and inverters to achieve reliable, sustainable, and cost-efficient energy for your needs.</p>
+            <a href="#" class="btn btn-purple">
+              Learn more
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 py-5">
+      <h2 class="pb-2 border-bottom text-purple">Our Previous Work Done</h2>
+      <div id="apwenCarousel" class="myCarousel carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="/media/images/projects/apwen/slide-1.jpg" alt="ml/ai class in session" class=" img-fluid">
+                  <div class="caption lead text-center p-2">Girls Training in conjuction with APWEN</div>
                 </div>
-            </div>
-        </section>
-        <section>
-            <h3>Our Services</h3>
-            <div class="offers">
-                <div class="offer">
-                    <div class="offer-image"><img src="media/images/it-sol.jpeg" alt=""></div>
-                    <div class="offer-text">
-                        <p class="offer-text-title">IT Solutions</p>
-                        <p class="offer-text-details">Our IT Solutions streamline operations, enhance cybersecurity, and support cloud integration. We provide tailored services, including network management and software development, to ensure your IT infrastructure is secure and efficient, allowing you to focus on your business goals.</p>
-                        <a href="/it-solution"><button type="button" class="btn btn-outline-primary">Discover more...</button></a>        
-                    </div>
+              <div class="carousel-item">
+                  <img src="/media/images/projects/da/slide-2.jpg" alt="ml/ai class in session" class=" img-fluid">
+                  <div class="caption lead text-center p-2">Data Analysis Class in session at bida</div>
+
                 </div>
-                <div class="offer">
-                    <div class="offer-image"><img src="media/images/train-sol.jpeg" alt=""></div>
-                    <div class="offer-text">
-                        <p class="offer-text-title">Training Solutions</p>
-                        <p class="offer-text-details">Empower your team with tailored training programs designed to enhance skills and boost productivity. From workshops to e-learning courses, we provide comprehensive solutions that keep your workforce ahead in a competitive market.</p>
-                        <a href="/training-solution"><button type="button" class="btn btn-outline-primary">Discover more...</button></a>
-                    </div>
+              <div class="carousel-item">
+                  <img src="/media/images/projects/ml-ai/slide-3.jpg" alt="ml/ai class in session" class="img-fluid">
+                  <div class="caption lead text-center p-2">ML/AI class in session at bida</div>
+              
                 </div>
-                <div class="offer">
-                    <div class="offer-image"><img src="media/images/energy-sol.jpg" alt=""></div>
-                    <div class="offer-text">
-                        <p class="offer-text-title">Energy Solutions</p>
-                        <p class="offer-text-details">Optimize energy use and reduce costs with our sustainable energy solutions. We offer expert consulting, innovative technologies, and efficient energy management systems to help you achieve your sustainability goals and improve operational efficiency.</p>
-                        <a href="/energy-solution"><button type="button" class="btn btn-outline-primary">Discover more...</button></a>
-                        
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="choose-us" class="choose-us carousel slide" data-bs-ride="carousel">
-            <h3>Why Choose Us?</h3>
-            <div class="features carousel-inner">
-                <div class="feature carousel-item active">
-                    <img src="media/images/R.jpeg" alt="Experienced Professionals">
-                    <div class="feature-text">
-                        <p class="feature-title">Experienced Professionals</p>
-                        <p class="feature-details">Our team consists of industry experts with years of experience.</p>
-                    </div>
-                </div>
-                <div class="feature carousel-item">
-                    <img src="media/images/R (1).jpeg" alt="Customized Solutions">
-                    <div class="feature-text">
-                        <p class="feature-title">Customized Solutions</p>
-                        <p class="feature-details">We provide solutions tailored to meet your specific business needs.</p>
-                    </div>
-                </div>
-                <div class="feature carousel-item">
-                    <img src="media/images/R (3).jpeg" alt="Proven Track Record">
-                    <div class="feature-text">
-                        <p class="feature-title">Proven Track Record</p>
-                        <p class="feature-details">We have a history of delivering successful projects across industries.</p>
-                    </div>
-                </div>
-                <div class="feature carousel-item">
-                    <img src="media/images/customer-service-concept-support-assistance-call-center-vector.jpg" alt="Customer Support">
-                    <div class="feature-text">
-                        <p class="feature-title">Customer Support</p>
-                        <p class="feature-details">Our support team is available 24/7 to assist you with any issues.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <!-- <section class="testimonials" id="testimonials">
-            <h3>Testimonials</h3>
-            <div class="testimonial-container">
-                <div class="testimonial-item active">
-                    <img src="media/images/testimonial1.png" alt="">
-                    <div class="testimonial-text">
-                        <p>"The IT solutions provided by this company have transformed our business operations. Highly recommend!"</p>
-                        <p class="author">- John Doe, CEO of Company A</p>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <img src="media/images/testimonial2.png" alt="">
-                    <div class="testimonial-text">
-                        <p>"Their training solutions helped our team gain new skills and improve productivity."</p>
-                        <p class="author">- Jane Smith, HR Manager of Company B</p>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <img src="media/images/testimonial3.png" alt="">
-                    <div class="testimonial-text">
-                        <p>"The energy solutions implemented have significantly reduced our operational costs."</p>
-                        <p class="author">- Mark Johnson, Operations Manager of Company C</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+          </div>
         
-    </main>
+          <!-- Custom controls with Bootstrap icons -->
+          <button class="carousel-control-prev shadow-icon" type="button" data-bs-target="#apwenCarousel" data-bs-slide="prev">
+              <i class="bi bi-arrow-left-circle fs-3"></i>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next shadow-icon" type="button" data-bs-target="#apwenCarousel" data-bs-slide="next">
+              <i class="bi bi-arrow-right-circle fs-3"></i>
+              <span class="visually-hidden">Next</span>
+          </button>
+
+      </div>
+  </div>
     <?- include ('../base/footer') ?>
     <script src="static/js/index.js"></script>
 </body>

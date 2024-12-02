@@ -3,16 +3,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 :root{
     --primary-color: #8c00ff;
+    --primary-color-dark: #1f003a;
     --box-bg-color-light: #f5f5f5;
     --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-body{
-    font-family: "Poppins", sans-serif; 
-    font-size: 1.0rem;
+body {
+    font-family: 'Open Sans', sans-serif;
 }
 
-h3{
-    text-align: center;
+.bg-purple {
+    background-color: #6f42c1; /* Purple primary color */
+}
+
+.text-purple {
+    color: #6f42c1;
+}
+
+.btn-purple{
+    background-color: #6f42c1;
+    color: #fff;
+}
+
+.btn-purple:hover{
+    background-color: #6939c4;
+    color: #fff;
+}
+
+.btn-purple-outline{
+    border-color: #6f42c1;
+    color: #6f42c1;
+    background-color: transparent;
+}
+
+.btn-purple-outline:hover{
+    color: #fff;
+    background-color: #6f42c1;
 }
 
