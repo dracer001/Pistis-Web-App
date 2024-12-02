@@ -1,18 +1,4 @@
 
-  document.querySelectorAll('.send-whatsapp').forEach(button => {
-    button.addEventListener('click', function() {
-      const category = this.getAttribute('data-category');
-      const phoneNumber = '+2348083981055'; // Replace with the desired phone number
-      const message = encodeURIComponent(`From Pistis Networking Academy\nCategory: ${category}`);
-      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-      
-      // Open WhatsApp link
-      window.open(whatsappUrl, '_blank');
-    });
-  });
-
-
-
 document.querySelector('.send-whatsapp-form').addEventListener('click', function(e) {
     e.preventDefault();
     const form = document.querySelector('#contact-us-form');

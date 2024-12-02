@@ -10,6 +10,8 @@ router.get('/', PUBLIC.index)
 router.get('/energy-solution', PUBLIC.esHome)
 
 router.get('/training-solution', PUBLIC.trainingSolutionHome)
+router.post('/send-course-mail', PUBLIC.sendCourseMail)
+
 
 router.post('/send-mail', sendEmail.sendEmail)
 

@@ -7,33 +7,8 @@
     <script src="js/projects.js" defer></script>
 </head>
 <body>
+    <?- include('../base/flash') ?>
     <?- include('../base/header') ?>
-
-    <? if (success_msg.length >0) { ?>
-        <div class="alert alert-success d-flex align-items-center alert-dismissible fade show" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-            <div>
-                <?= success_msg ?>
-            </div>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    <? }else if (warning_msg.length > 0) { ?>
-        <div class="alert alert-warning d-flex align-items-center alert-dismissible fade show" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#info-fill"/></svg>
-            <div>
-                <?= warning_msg ?>
-            </div>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    <? }else if (error_msg.length > 0) { ?>
-        <div class="alert alert-danger d-flex align-items-center alert-dismissible fade show" role="alert">
-            <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-            <div>
-              <?= error_msg ?>
-            </div>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    <? } ?>
 
     <div class="hero">
         <div class="container text-center">
@@ -51,7 +26,7 @@
                         <p class="lead">Organizations can partner with us to deliver customized, impactful tech training programs. From government contracts to private enterprise initiatives, we empower teams and communities with the skills needed to excel in a tech-driven world.</p>
                         <div class="btns">
                             <!-- <button class="btn btn-primary send-email" data-category="Organizations/Government">Partner with us</button> -->
-                            <button class="btn btn-lg btn-purple-outline send-whatsapp" data-category="Organizations/Government"><i class="bi bi-whatsapp"></i> Partner with us</button>
+                            <!-- <button class="btn btn-lg btn-purple-outline send-whatsapp" data-category="Organizations/Government"><i class="bi bi-whatsapp"></i> Partner with us</button> -->
                         </div>
                     </div>
                 </div>
@@ -69,7 +44,7 @@
                             For parents and guardians, we offer one-on-one or small group tech training designed to equip young learners with essential digital skills. Our tutors provide expert guidance, ensuring a foundation for future success.</p>
                         <div class="btns">
                             <!-- <button class="btn btn-primary send-email" data-category="Private Tutoring">Hire Us</button> -->
-                            <button class="btn btn-lg btn-purple-outline send-whatsapp" data-category="Private Tutoring"><i class="bi bi-whatsapp"></i> Hire Us</button>
+                            <!-- <button class="btn btn-lg btn-purple-outline send-whatsapp" data-category="Private Tutoring"><i class="bi bi-whatsapp"></i> Hire Us</button> -->
                         </div>
                     </div>
                 </div>
@@ -82,7 +57,7 @@
         <div class="container d-flex justify-content-center p-5">
             <div class="text-content text-center">
                 <p class="display-6">Join us in empowering Nigeria’s youth with cutting-edge skills in AI and technology, driving innovation and building a brighter future for Africa’s digital landscape.</p>
-                <button class="btn btn-lg btn-purple-outline send-whatsapp" data-category="Partnership"><i class="bi bi-whatsapp"></i> Join Us</button>
+                <button class="btn btn-lg btn-purple send-whatsapp" data-category="Partnership"><i class="bi bi-whatsapp"></i> Contact Us</button>
 
             </div>
         </div>
@@ -97,7 +72,7 @@
                         <p class="lead">Individuals ready to advance their tech careers can enroll in our specialized training cohorts. Gain hands-on experience, industry-recognized credentials, and join a community of tech enthusiasts on the path to success.</p>
                         <div class="btns">
                             <!-- <button class="btn btn-primary send-email"  data-category="Cohort">Contact Us</button> -->
-                            <button class="btn btn-purple-outline send-whatsapp" data-category="Cohort"><i class="bi bi-whatsapp"></i> Contact Us</button>
+                            <!-- <button class="btn btn-purple-outline send-whatsapp" data-category="Cohort"><i class="bi bi-whatsapp"></i> Contact Us</button> -->
                         </div>
                     </div>
                 </div>
@@ -199,37 +174,49 @@
 
     <section class="my-5">
         <div class="container">
-            <form method="post" action="/send-mail" class="contact-us-form p-4 rounded shadow border mx-auto" id="contact-us-form">
-                <legend>Contact Us</legend>
+            <form method="post" action="/send-course-mail" class="contact-us-form p-4 rounded shadow border mx-auto" id="contact-us-form">
+                <legend>Sign Up for a Course</legend>
                 <div class="row">
-                    <div class="col-lg-4 mb-3">
+                    <div class="col-lg-6 mb-3">
                         <label for="" class="form-label fs-6">Name</label>
-                        <input type="text" class="form-control" placeholder="Name" name="name" required>
+                        <input type="text" class="form-control" placeholder="Lastname Firstname" name="name" required>
                     </div>
 
-                    <div class="col-lg-4 mb-3">
+                    <div class="col-lg-6 mb-3">
                         <label for="" class="form-label fs-6">Email</label>
                         <input type="email" class="form-control" placeholder="email@example.com" name="email" required>
                     </div>
 
-                    <div class="col-lg-4 mb-3">
-                        <label for="" class="form-label fs-6">Category</label>
-                        <select class="form-select mb-3" aria-label=".form-select-lg example" name="category" id="category-select" required>
+                    <div class="col-lg-6 mb-3">
+                        <label for="" class="form-label fs-6">Phone Number (whatsapp)</label>
+                        <input type="text" class="form-control" placeholder="08000000001" name="phoneNumber" required>
+                    </div>
+
+                    <div class="col-lg-6 mb-3">
+                        <label for="" class="form-label fs-6">Course</label>
+                        <select class="form-select mb-3" aria-label=".form-select-lg example" name="course" id="category-select" required>
                             <option selected>Choose a category</option>
-                            <option value="Organizations/Government">Organizations/Government</option>
-                            <option value="Private Tutoring">Private Tutoring</option>
-                            <option value="Cohort">Cohort</option>
-                            <option value="Partnership">Partnership</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="data-science">Data Science</option>
+                            <option value="machine-learning">Machine Learning</option>
+                            <option value="cloud-computing">Cloud Computing</option>
+                            <option value="cybersecurity">Cybersecurity</option>
+                            <option value="mobile-app-development">Mobile App Development</option>
+                            <option value="artificial-intelligence">Artificial Intelligence</option>
+                            <option value="ui-ux-design">UI/UX Design</option>
+                            <option value="dev-ops">DevOps</option>
+                            <option value="networking">Networking</option>
+                            <option value="server-installation">Server Installation</option>
                         </select>
                     </div>
                     <div class="col-lg-12 mb-3">
-                        <label for="" class="form-label fs-6">Maessage (optional)</label>
+                        <label for="" class="form-label fs-6">Message (optional)</label>
                         <textarea class="form-control" name="message"></textarea>
                     </div>
                 </div>
                 <div class="btns">
                     <!-- <button class="btn btn-primary">Send</button> -->
-                    <button class="btn btn-purple-outline send-whatsapp-form"><i class="bi bi-whatsapp"></i> Send</button>
+                    <button class="btn btn-purple-outline"> Send</button>
                 </div>
             </form>
         </div>
